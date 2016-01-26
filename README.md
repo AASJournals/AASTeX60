@@ -2,7 +2,7 @@
 The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). 
 
 ## BibTeX
-This repository also includes the AAS Journals BibTeX style file, [aasjournals.bst](bst/aasjournals.bst).
+This repository also includes the AAS Journals BibTeX style file, [aasjournals.bst](bst/aasjournal.bst).
 
 ## Download
 You may download the most recent version from this repository or from the [AAS Journals website](http://journals.aas.org/authors/aastex.html). 
