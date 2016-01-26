@@ -1,0 +1,96 @@
+\documentclass[onecolumn]{aastex3}
+
+\newcommand\aastex{AAS\TeX}%
+
+\begin{document}
+
+\begin{center}
+Using {\tt\string natbib} with \aastex
+\end{center}
+
+\aastex\ uses Patrick Daly's {\tt\string natbib} package to manage
+citations. The {\tt\string natbib} package re-implements LaTeX's
+{\tt\string\cite} command, and offers greater flexibility for managing
+citations in the author-year form. {\tt\string natbib} is required with the
+\aastex\ package but fortunately {\tt\string natbib} is included in most
+modern distributions. Authors are encouraged to read the {\tt\string
+natbib} documentation for complete details on the package's capabilites.
+All examples in this document are adapted from the {\tt\string natbib}
+documentation.
+
+Authors must use the LaTeX's {\tt\string thebibliography} environment to
+use the {\tt\string natbib} extensions. Here is a bibliography with two
+entries marked up in the {\tt\string natbib} style:
+
+\begin{verbatim}
+\begin{thebibliography}{}
+\bibitem[James et al.(1991)]{jam91} James, H. ...
+\bibitem[Jones et al.(1990)Jones, Baker, and Williams]{jon90} Jones, J. ...
+\end{thebibliography}
+\end{verbatim}
+
+The square-bracketed argument contains the "author" portion of the citation
+followed by the year in parentheses. The parentheses are important, so do
+not leave them out. Note that in the second {\tt\string\bibitem}, the
+square-bracketed argument includes two author lists, a short version before
+the year and a long version after. Authors should use this form of the
+markup if they wish to use the * forms of the {\tt\string\cite} commands.
+(See the examples below.)
+
+The text in the curly-brace argument of the {\tt\string\bibitem} is the
+citation key and should be used as the argument in the corresponding cite
+commands in the text. The two basic text citation commands are
+{\tt\string\citet} and {\tt\string\citep}. ({\tt\string\citet} corresponds
+to the plain LaTeX {\tt\string\cite} command.) Use the two optional
+arguments to append text before or after the citationtext in the first set
+of square brackets will appear before the cite, text in the second set will
+appear after it. Use the asterisk (*) form of the cite commands to print
+the long version of the author lists for references that have been marked
+up in the manner of the "jon90" example.
+
+Here are some {\tt\string\citet} and {\tt\string\citep} examples taken from
+the {\tt\string natbib} package
+documentation\footnote{\url{http://www.ctan.org/pkg/natbib}}.
+
+\begin{tabular}{ll}
+\textbf{Command} & \textbf{Output} \\
+\verb|\citet{jon90}| & Jones et al. (1990) \\
+\verb|\citet[chap.~2]{jon90}| & Jones et al. (1990, chap.~2) \\
+\verb|\citep{jon90}| & (Jones et al., 1990) \\
+\verb|\citep[chap.~2]{jon90}| & (Jones et al., 1990, chap.~2) \\
+\verb|\citep[see][]{jon90}| & (see Jones et al., 1990) \\
+\verb|\citep[see][chap.~2]{jon90}| & (see Jones et al., 1990, chap.~2) \\
+\verb|\citet*{jon90}| & Jones, Baker, and Williams (1990) \\
+\verb|\citep*{jon90}| & (Jones, Baker, and Williams, 1990) \\
+\verb|\citet{jon90,jam91}| & Jones et al. (1990); James et al. (1991) \\
+\verb|\citep{jon90,jam91}| & (Jones et al., 1990; James et al. 1991) \\
+\verb|\citep{jon90,jon91}| & (Jones et al., 1990, 1991) \\
+\verb|\citep{jon90a,jon90b}| & (Jones et al., 1990a,b) \\
+\end{tabular}
+
+Alternatively, use {\tt\string\citealt} and {\tt\string\citealp} to produce
+a cite without parentheses:
+
+\begin{tabular}{ll}
+\textbf{Command} & \textbf{Output} \\
+\verb|\citealt{jon90}| & Jones et al. 1990 \\
+\verb|\citealt*\{jon90}| & Jones et al., 1990 \\
+\verb|\citealp*\{jon90}| & Jones, Baker, and Williams, 1990 \\
+\verb|\citealp{jon90,jam91}| & Jones et al., 1990; James et al., 1991 \\
+\verb|\citealp[pg.~32]{jon90}| & Jones et al., 1990, pg.~32 \\
+\end{tabular}
+
+\clearpage
+
+Finally, the {\tt\string\citeauthor} and {\tt\string\citeyear} commands can
+be used to print only the author or year portion of the citation:
+
+\begin{tabular}{ll}
+\textbf{Command} & \textbf{Output} \\
+\verb|\citeauthor{jon90}| & Jones et al. \\
+\verb|\citeauthor*{jon90}| & Jones, Baker, and Williams \\
+\verb|\citeyear{jon90}| & 1990 \\
+\verb|\citeyearpar{jon90}| & (1990) \\
+\end{tabular}
+
+\end{document}
