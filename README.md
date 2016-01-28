@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.45282.svg)](http://dx.doi.org/10.5281/zenodo.45282)
+
 ## AASTeX60
 The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). 
 
