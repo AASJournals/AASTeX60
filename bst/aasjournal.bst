@@ -1,6 +1,10 @@
 %%
 %% $Log: apj.bst,v $
 
+%% Revision 1.12 2016/2/11 Amy
+%% Changes to @misc function to specifications by Dr. August Muench.
+%% Made comma appear between title and publisher whether or not there is a version number.
+
 %% Revision 1.11 2015/12/31 Amy
 %% Changes to @misc function to specifications by Dr. August Muench.
 %% Added version and publisher fields.
@@ -128,6 +132,7 @@ ENTRY
     school
     series
     title
+misctitle
     type
     volume
     year
@@ -542,12 +547,21 @@ FUNCTION {format.title}
   if$
 }
 
+
 FUNCTION {format.version}
 { version empty$
     { "" }
     { bbl.version version  * ", " *}
   if$
 }
+
+FUNCTION {format.miscversion}
+{ version empty$
+    { "" }
+    { bbl.version version  * "" *}
+  if$
+}
+
 
 FUNCTION {format.full.names}
 {'s :=
@@ -1016,7 +1030,7 @@ FUNCTION {format.aaspublisher}
     { "empty publisher in " cite$ * warning$ }
     'skip$
   if$
-  ""
+  ", "
   address empty$ publisher empty$ and
     'skip$
     {
@@ -1323,7 +1337,7 @@ FUNCTION {misc}
   date.block
   format.title output
   howpublished output
-  format.version output
+  format.miscversion output
   format.aaspublisher 
   format.note output
   format.pid output

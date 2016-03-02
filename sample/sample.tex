@@ -23,7 +23,7 @@
 %%
 
 %% using aastex version 6
-\documentclass[onecolumn]{aastex6}
+\documentclass{aastex6}
 
 %% The other main article choice is a tightly typeset, two-column article
 %% that more closely resembles the final typeset pdf article.
@@ -46,7 +46,7 @@
 %   times	: uses times font instead of the default
 %   linenumbers	: turn on lineno package.
 %   trackchanges : required to see the revision mark up and print output
-%   numberedappendix: Needed to label appendix sections A, B, .
+%   numberedappendix: Labels appendix sections A, B, ... This is the default.
 %   appendixfloats: Needed. Resets figure and table counters to zero
 
 %% these can be used in any combination, e.g.
@@ -61,20 +61,23 @@
 \newcommand\aastex{AAS\TeX}
 \newcommand\latex{La\TeX}
 
+%% AASTeX 6.0 supports the ability to suppress the names and affiliations
+%% of some authors and displaying them under a "collaboration" banner to
+%% minimize the amount of author information that to be printed.  This 
+%% should be reserved for articles with an extreme number of authors.
+%%
 %% Mark up commands to limit the number of authors on the front page.
 \AuthorCallLimit=1
 %% Will only show Schwarz & Muench since Schwarz and Muench
 %% are in the same \author call. 
-\collaborationName{Friends of AASTeX}
-%% will print "The AAS collaboration" after the shortened author list.
-%% Note that all the \altaffil information will still be shown so it
-%% has to be manually commented out if you do not want it shown.
+\fullcollaborationName{The Friends of AASTeX Collaboration}
+%% will print the collaboration text after the shortened author list.
+%% These commands have to COME BEFORE the \author calls.
 %%
 %% Note that all of these author will be shown in the published article.
 %% This feature is meant to be used prior to acceptance to make the
 %% front end of a long author article more manageable.
 %% Use \allauthors at the manuscript end to show the full author list.
-
 
 %% The following command can be used to set the latex table counters.  It
 %% is needed in this document because it uses a mix of latex tabular and
@@ -115,7 +118,7 @@
 
 \title{An Example Article using \aastex v6.0}
 
-%% Use \author, \affil, and the \and command to format author and affiliation 
+%% Use \author, \affil, plus the \and command to format author and affiliation 
 %% information.  If done correctly the peer review system will be able to
 %% automatically put the author and affiliation information from the manuscript
 %% and save the corresponding author the trouble of entering it by hand.
@@ -157,27 +160,6 @@ Washington, DC 20009-1231, USA}
 \altaffiltext{3}{AAS Journals Associate Editor-in-Chief}
 \altaffiltext{4}{AAS Director of Publishing}
 \altaffiltext{5}{IOP Senior Publisher for the AAS Journals}
-
-%% AASTeX 6.0 supports the ability to suppress the names and affiliations
-%% of some authors and displaying them under a "collaboration" banner to
-%% minimize the amount of author information that to be printed.  This 
-%% should be reserved for articles with an extreme number of authors.  
-%% The necessary command are \AuthorCallLimit and \collaborationName.
-%% An \AuthorCallLimit=2 call prior to the author list will only show
-%% the authors in the first two \author calls.  The \collaborationName
-%% defines the collaboration identifier.  Commented examples below.
-
-%\AuthorCallLimit=1
-%% Will only show Schwarz & Muench since Schwarz and Muench
-%% are in the same \author call. 
-%\collaborationName{Friends of AASTeX}
-%% will print "The AAS collaboration" after the shortened author list.
-%% Note that all the \altaffil information will still be shown so it
-%% has to be manually commented out if you do not want it shown.
-%%
-%% Note that all of these author will be shown in the published article.
-%% This feature is meant to be used prior to acceptance to make the
-%% front end of a long author article more manageable.
 
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
@@ -279,7 +261,7 @@ include:
 encapsulated postscript (EPS) or portable document format (PDF) files,
 \item figure set mark up for large collections of similar figures,
 \item color mark up to easily enable/disable revised text highlighting,
-\item improved url support, and
+\item improved url support and hyperlinking, and
 \item numerous table options such as the ability to hide columns, column 
 decimal alignment, automatic column math mode and numbering, plus splitting of
 wide tables.
@@ -426,12 +408,18 @@ and finally the bottom of the page without regard to what it thinks the
 proper position should be.  Many of the tables and figures in this article
 use a placement specifier to set their positions.
 
-Note that the \latex\ {\tt\string tabular} environment is not a float.  Only
-when a {\tt\string tabular} is surrounded by {\tt\string\begin\{table\}} ...
-{\tt\string\end\{table\}} is it a true float and the rules and suggestions
-above apply.
+Note that the \latex\ {\tt\string tabular} environment is not a float.
+Only when a {\tt\string tabular} is surrounded by
+{\tt\string\begin\{table\}} ...  {\tt\string\end\{table\}} is it a true
+float and the rules and suggestions above apply.  In addition, with the
+addition of the longtable package to span a page break, deluxetable is also
+no longer a float be default.  An author must make a deluxetable a float by 
+adding the command {\tt\string \floattable} right before the {\tt\string \begin\{deluxetable\}} call. This command will allow \latex to optimally place
+the deluxetable but note that long tables will not longer split over a page.
+It is up to the reader to strike the right balance.
 
-\begin{deluxetable}{ccCrlc}[b!]
+\floattable
+\begin{deluxetable}{ccCrlc}
 \tablecaption{Column math mode in an observation log \label{tab:mathmode}}
 \tablecolumns{6}
 \tablenum{2}
@@ -619,6 +607,7 @@ the column identifier preamble to another valid value.  This table also
 uses {\tt\string\tablenum} to renumber the table because a \latex\ tabular
 table was inserted before it.
 
+\floattable
 \begin{deluxetable}{cchlDlc}
 \tablenum{4}
 \tablecaption{Fun facts about the first 10 messier objects\label{tab:messier}}
@@ -643,10 +632,8 @@ M9 & NGC 6333 & Messier 9 & Cluster, globular & 7.91 & Ophiuchus & 8.4 \\
 M10 & NGC 6254 & Messier 10 & Cluster, globular & 4.42 & Ophiuchus & 6.4 \\
 \enddata
 \tablecomments{This table ``hides'' the third column in the \latex\ when compiled.
-The Distance is also centered on the decimals.  Note that when using decimal
-alignment you need to include the {\tt\string\decimals} command after
-{\tt\string\startdata} and all of the values in that column have to have a
-space before the next ampersand.}
+The Distance is also centered on the decimals.  Note that all of the values 
+in a decimal aligned column have to have a space before the next ampersand.}
 \end{deluxetable}
 
 \subsubsection{Splitting a table into multiple horizontal components}
@@ -1074,8 +1061,7 @@ underlined purple, respectively.  Authors should use the first command to
 \edit1{indicated which text has been changed from the first revision.}  The
 second command is to highlight \edit2{new or modified text from a second
 revision}.  If a third revision is needed then the last command should be
-used \break 
-\edit3{to show this changed text}.  Since over 90\% of all manuscripts
+used \edit3{to show this changed text}.  Since over 90\% of all manuscripts
 are accepted after the 3rd revision these commands make it easy to identify
 what text has been added and when.  Once the article is accepted all the
 highlight color can be turned off simply by adding the
