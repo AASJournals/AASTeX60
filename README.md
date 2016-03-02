@@ -16,4 +16,4 @@ In addition to the [sample files](sample) provided here, an extensive AASTeX gui
 Outside of issues or pull requests, please contact the AASTeX team for help at our [authoring helpdesk](mailto:authors@aas.org) or reach us on Twitter [@AAS_Publishing](https://twitter.com/AAS_Publishing).
 
 ## Credit
-AASTeX originated 28 years ago with a set of LaTeX macros developed by Bob Hanisch and Chris Biemesderfer. While a complete history is available in the [sample document](sample/sample.tex), we want to recognize the most recent contributions of individual astronomers to AASTeX 6 here. They include: 
+AASTeX originated 28 years ago with a set of LaTeX macros developed by [Bob Hanisch and Chris Biemesderfer](https://ui.adsabs.harvard.edu/#abs/1989BAAS...21..780H/abstract). While a complete history is available in the [sample document](sample/sample.tex), we want to recognize the most recent contributions of individual astronomers to AASTeX 6 here. They include: 
