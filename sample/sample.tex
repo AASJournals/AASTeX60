@@ -755,7 +755,7 @@ latest version of \aastex.
 
 \subsection{General figures\label{subsec:general}}
 
-\aastex\ has a the {\tt\string\plotone} command to display a figure
+\aastex\ has a {\tt\string\plotone} command to display a figure
 consisting of one EPS/PDF file.  Figure \ref{fig:general} is an example
 which uses the data from Table \ref{tab:table}. For a general figure
 consisting of two EPS/PDF files the {\tt\string\plottwo} command can be
@@ -787,13 +787,13 @@ found at \break
 
 Including more than two EPS/PDF files in a single figure call can be tricky
 easily format.  To make the process easier for authors \aastex\ v6.0 offers
-{\tt\string\girdline} which allows any number of individual EPS/PDF file
-calls within a single figure.  Each file cited in a {\tt\string\girdline}
-will be displayed in a row.  By adding more {\tt\string\girdline} calls an
+{\tt\string\gridline} which allows any number of individual EPS/PDF file
+calls within a single figure.  Each file cited in a {\tt\string\gridline}
+will be displayed in a row.  By adding more {\tt\string\gridline} calls an
 author can easily construct a matrix X by Y individual files as a
 single general figure.
 
-For each {\tt\string\girdline} command a EPS/PDF file is called by one of
+For each {\tt\string\gridline} command a EPS/PDF file is called by one of
 four different commands.  These are {\tt\string\fig},
 {\tt\string\rightfig}, {\tt\string\leftfig}, and {\tt\string\boxedfig}.
 The first file call specifies no image position justification while the
@@ -807,7 +807,7 @@ is recommended that author use fractional units with the
 
 Figure \ref{fig:pyramid} shows an inverted pyramid of individual
 figure constructed with six individual EPS files using the
-{\tt\string\girdline} option.
+{\tt\string\gridline} option.
 
 \begin{figure}
 \figurenum{3}
@@ -815,8 +815,8 @@ figure constructed with six individual EPS files using the
           \fig{CSS081007.eps}{0.3\textwidth}{(b)}
           \fig{LMC_2009.eps}{0.3\textwidth}{(c)}
           }
-\gridline{\fig{RS_oph.eps}{0.3\textwidth}{(d)}
-          \fig{U_SCo.eps}{0.3\textwidth}{(e)}
+\gridline{\fig{RS_Oph.eps}{0.3\textwidth}{(d)}
+          \fig{U_Sco.eps}{0.3\textwidth}{(e)}
           }
 \gridline{\fig{KT_Eri.eps}{0.3\textwidth}{(f)}}
 \caption{Inverted pyramid figure of six individual files. The nova are
@@ -926,7 +926,7 @@ own specific figure set mark up to incorporate into their \latex\ articles.
 \subsection{Animations}
 
 Authors may include animations in their articles.  A single still frame from 
-the animation should be included as an regular figures to serve as an example.
+the animation should be included as a regular figure to serve as an example.
 The associated figure caption should indicate to the reader exactly what the
 animation shows and that the animation is available online.
 
