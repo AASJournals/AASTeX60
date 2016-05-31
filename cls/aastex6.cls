@@ -208,7 +208,7 @@ ORCID identifier and more, by Amy Hendrickson,%
 %% but times.sty is ubiquitous, and many people may not have apjfonts.sty
 %% or the fonts that it calls.
 %% default fonts:
-\usepackage{newtxtext,newtxmath}
+\usepackage{txfonts}
  \fi
 
 %%%%%%%%%%%%%
