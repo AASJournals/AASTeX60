@@ -1,11 +1,21 @@
 %%
 %% $Log: apj.bst,v $
 
-%% Revision 1.12 2016/2/11 Amy
+%% Revision 1.14 2016/10/5 Amy Hendrickson
+%% Changed bbl.version so that there is no longer a trailing `.'
+
+%% Revision 1.14 2016/9/14 Amy Hendrickson
+%% Added URL field 
+
+%% Revision 1.13 2016/8/9 Amy Hendrickson
+%% Change to presort and bibsort to get multiple entries with same author/year
+%% combination to be ordered in bibliography in same order as \cite{}s entered in text.
+
+%% Revision 1.12 2016/2/11 Amy Hendrickson
 %% Changes to @misc function to specifications by Dr. August Muench.
 %% Made comma appear between title and publisher whether or not there is a version number.
 
-%% Revision 1.11 2015/12/31 Amy
+%% Revision 1.11 2015/12/31 Amy Hendrickson
 %% Changes to @misc function to specifications by Dr. August Muench.
 %% Added version and publisher fields.
 
@@ -132,11 +142,12 @@ ENTRY
     school
     series
     title
-misctitle
+    misctitle
     type
     volume
     year
     version
+    url
   }
   {}
   { label extra.label sort.label short.list }
@@ -288,7 +299,7 @@ FUNCTION {bbl.volume}
 { "Vol." }
 
 FUNCTION {bbl.version}
-{ "v." }
+{ "v" }
 
 FUNCTION {bbl.of}
 { "of" }
@@ -539,6 +550,7 @@ FUNCTION {format.note}
   if$
 }
 
+
 FUNCTION {format.title}
 { title empty$
     { "" }
@@ -673,6 +685,13 @@ FUNCTION {format.doi}
 { doi empty$
     { "" }
     { "doi:" doi * }
+  if$
+}
+
+FUNCTION {format.url}
+{ url empty$
+    { "" }
+    { new.block "\url{" url * "}" * }
   if$
 }
 
@@ -1151,6 +1170,7 @@ FUNCTION {article}
     { format.journal.pages }
   if$
   format.note output
+  format.url output
   fin.entry
 }
 
@@ -1186,6 +1206,7 @@ FUNCTION {book}
   format.pages output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1201,6 +1222,7 @@ FUNCTION {booklet}
   address output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1238,6 +1260,7 @@ FUNCTION {inbook}
 %  if$
   format.pages "pages" output.check
   format.note output
+  format.url output
   fin.entry
 }
 
@@ -1263,6 +1286,7 @@ FUNCTION {incollection}
 %  if$
   format.pages "pages" output.check
   format.note output
+  format.url output
   fin.entry
 }
 
@@ -1291,6 +1315,7 @@ FUNCTION {inproceedings}
 %  if$
   format.pages output
   format.note output
+  format.url output
   fin.entry
 }
 
@@ -1309,6 +1334,7 @@ FUNCTION {manual}
   address output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1325,6 +1351,7 @@ FUNCTION {mastersthesis}
   address output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1341,6 +1368,7 @@ FUNCTION {misc}
   format.aaspublisher 
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1357,6 +1385,7 @@ FUNCTION {phdthesis}
   address output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1390,6 +1419,7 @@ FUNCTION {proceedings}
 %  publisher output
   format.pages output
   format.note output
+  format.url output
   fin.entry
 }
 
@@ -1406,6 +1436,7 @@ FUNCTION {techreport}
   address output
   format.note output
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1419,6 +1450,7 @@ FUNCTION {unpublished}
 %  format.title "title" output.check
   format.note "note" output.check
   format.pid output
+  format.url output
   fin.entry
 }
 
@@ -1640,9 +1672,14 @@ FUNCTION {presort}
   *
   "    "
   *
-  title field.or.null
-  sort.format.title
-  *
+%% August 2016
+%% commenting out this combination gets the cites right but references wrong
+%%  title field.or.null
+%%  sort.format.title
+%%  *
+%%
+%% with only this line on, we get cites right but references wrong
+ sort.format.title
   #1 entry.max$ substring$
   'sort.key$ :=
 }
@@ -1704,9 +1741,11 @@ FUNCTION {bib.sort.order}
   *
   "    "
   *
-  title field.or.null
-  sort.format.title
-  *
+%% Commented out August 2016, so that multiple indentical author/year
+%% combinations are entered in the order that \cite{}s are found in text.
+%  title field.or.null
+%  sort.format.title
+%  *
   #1 entry.max$ substring$
   'sort.key$ :=
 }
@@ -1724,6 +1763,8 @@ FUNCTION {begin.bib}
   "\begin{thebibliography}{}"
   write$ newline$
   "\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi"
+  write$ newline$
+  "\providecommand{\url}[1]{\href{#1}{#1}}"
   write$ newline$
 }
 
