@@ -1,7 +1,7 @@
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.45282.svg)](http://dx.doi.org/10.5281/zenodo.45282)
+[![v6.0.1 DOI](https://zenodo.org/badge/doi/10.5281/zenodo.45282.svg)](http://doi.org/10.5281/zenodo.45282)
 
-## AASTeX60
-The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). 
+## AASTeX6
+The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html).  
 
 ## BibTeX
 This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst).
@@ -12,5 +12,27 @@ You may download the most recent version from this repository or from the [AAS J
 ## Documentation
 In addition to the [sample files](sample) provided here, an extensive AASTeX guide can be found at our [AAS Journals website](http://journals.aas.org/authors/aastex/aasguide.html). Broader style, data, and graphics guides are also [available](http://journals.aas.org/authors/). 
 
+## Development model
+AASTeX development is performed outside of the Github platform, but incremental updates from our developers are posted here regularly, and we gladly accept issues and user pull requests. 
+
+## Citation
+While the AAS Journals encourage developers to post preferred citations for their codes and encourage authors to cite all software that supports their research articles, citation of AASTeX or acknowledgement of the developers and maintainers of this package is traditionally seen as inappropriate and is not requested.
+
 ## Contact
 Outside of issues or pull requests, please contact the AASTeX team for help at our [authoring helpdesk](mailto:authors@aas.org) or reach us on Twitter [@AAS_Publishing](https://twitter.com/AAS_Publishing).
+
+## Release History
+
+| Version  | Github Release   | DOI  |
+| -------- |:----------------:| -----|
+| [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](http://doi.org/10.5281/zenodo.45282)|
+| [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd       |
+| [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | tbd       |
+
+  [9e852317]: https://github.com/augustfly/AASTeX60/releases/tag/v6.0.1 "v6.0.1"
+
+
+## Credit
+AASTeX originated 28 years ago with a set of LaTeX macros developed by [Bob Hanisch and Chris Biemesderfer](https://ui.adsabs.harvard.edu/#abs/1989BAAS...21..780H/abstract). While a more detailed history is available in the [sample document](sample/sample61.tex), we want to recognize the most recent contributions of individual astronomers to AASTeX 6 here. A partial list includes:
+
++ @dfm and @davidwhogg authored a [series of readability and layout modifications of AASTeX v6.0](https://github.com/dfm/peerless/blob/master/document/ms.tex#L19-L69) in a recent manuscript that were incorporated into v6.1 as the *"modern"* document style.
