@@ -1,7 +1,7 @@
-[![v6.0.1 DOI](https://zenodo.org/badge/doi/10.5281/zenodo.45282.svg)](http://doi.org/10.5281/zenodo.45282)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.168228.svg)](https://doi.org/10.5281/zenodo.168228)
 
 ## AASTeX6
-The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html).  
+The Version 6 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 6, 2016. A list of updates and changes provided by Version 6 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). Please note that although this is a point release, it is not backwards compatible with any prior version of AASTeX.
 
 ## BibTeX
 This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst).
@@ -25,9 +25,9 @@ Outside of issues or pull requests, please contact the AASTeX team for help at o
 
 | Version  | Github Release   | DOI  |
 | -------- |:----------------:| -----|
-| [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](http://doi.org/10.5281/zenodo.45282)|
+| [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](https://doi.org/10.5281/zenodo.45282)|
 | [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd       |
-| [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | tbd       |
+| [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228)       |
 
   [9e852317]: https://github.com/augustfly/AASTeX60/releases/tag/v6.0.1 "v6.0.1"
 
