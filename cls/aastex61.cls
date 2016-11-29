@@ -2,6 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% AASTeX61.cls                                  %%
 %% October 5, 2016                               %%
+%% November 28, 2016 (bug fix on .bib file)      %%
 %% Copyright 2016 American Astronomical Society  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -6318,9 +6319,13 @@ width 0pt\relax\fi}}}
 }%
 
 
-%% get rid of \jobname Notes being sent to .aux file:
-\let\bibdata@app\relax
-\def\pre@bibdata{}
+%%% These lines were commented out until a fix could be applied that
+%%% addresses the underlying issues. The problme is that on Linux systems
+%%% you can not write a "hidden" .bib file. There is no issue with this
+%%% on Mac OS X nor Windows.
+%%% get rid of \jobname Notes being sent to .aux file:
+%\let\bibdata@app\relax
+%\def\pre@bibdata{}
 
 \def\frontmatter@author@produce@script{%
   \begingroup
