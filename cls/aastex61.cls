@@ -750,7 +750,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 
 \def\frontmatter@title@format{\normalsize\centering}
 
-\def\frontmatter@title@below{\vskip12pt}%
+\def\frontmatter@title@below{\ifmodern\vskip12pt\fi}%
 
 \def\frontmatter@authorformat{\small\scshape
 \ifmodern
@@ -766,8 +766,8 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 
 
 \def\frontmatter@affiliationfont{\normalfont\footnotesize\it
-\ifmodern\baselineskip=14pt\fi
-\iflongauthor\else
+\ifmodern
+\baselineskip=14pt
 \rightskip-12pt plus 1fil
 \leftskip6pt \parindent-4pt
 \fi
@@ -799,7 +799,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
  \move@AU\move@AF%
  \begingroup%
   \@affiliation{%\hspace*{2mm}
- #1\ifmodern\iflongauthor\baselineskip=12pt\else\vskip2pt\fi\else\baselineskip=12pt\fi}%
+ #1\ifmodern\iflongauthor\baselineskip=12pt\else\vskip2pt\fi\fi}%
 }%
 \fi %% end switch for longauthor
 
@@ -6148,8 +6148,8 @@ needed. It will not do anything.^^J Please use
 \firstaffiltrue
 
 \def\@affil@script#1#2#3#4{%
-%\ifmodern
-\iffirstaffil\vskip24pt 
+\iffirstaffil
+\ifmodern\vskip24pt\fi
 \global\firstaffilfalse\fi%\fi
  \@ifnum{#1=\z@}{}{%
   \par
