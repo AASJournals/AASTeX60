@@ -766,8 +766,8 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 
 
 \def\frontmatter@affiliationfont{\normalfont\footnotesize\it
-\ifmodern\baselineskip=14pt\fi
-\iflongauthor\else
+\ifmodern
+\baselineskip=14pt
 \rightskip-12pt plus 1fil
 \leftskip6pt \parindent-4pt
 \fi
@@ -799,7 +799,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
  \move@AU\move@AF%
  \begingroup%
   \@affiliation{%\hspace*{2mm}
- #1\ifmodern\iflongauthor\baselineskip=12pt\else\vskip2pt\fi\else\baselineskip=12pt\fi}%
+ #1\ifmodern\iflongauthor\baselineskip=12pt\else\vskip2pt\fi\fi}%
 }%
 \fi %% end switch for longauthor
 
