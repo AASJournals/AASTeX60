@@ -750,7 +750,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
 
 \def\frontmatter@title@format{\normalsize\centering}
 
-\def\frontmatter@title@below{\vskip12pt}%
+\def\frontmatter@title@below{\ifmodern\vskip12pt\fi}%
 
 \def\frontmatter@authorformat{\small\scshape
 \ifmodern
@@ -6148,8 +6148,8 @@ needed. It will not do anything.^^J Please use
 \firstaffiltrue
 
 \def\@affil@script#1#2#3#4{%
-%\ifmodern
-\iffirstaffil\vskip24pt 
+\iffirstaffil
+\ifmodern\vskip24pt\fi
 \global\firstaffilfalse\fi%\fi
  \@ifnum{#1=\z@}{}{%
   \par
