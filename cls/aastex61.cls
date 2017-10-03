@@ -841,6 +841,7 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX61}
     \frontmatter@abstractheading
     \frontmatter@abstractfont
 %    \let\footnote\mini@note
+    \everypar{\rightskip=0.5in\leftskip=\rightskip}\par
     \expandafter\everypar\expandafter{\the\everypar\addcontents@abstract\everypar{}}%
 \ifnumlines\let\go\linenumbers\else\let\go\relax\fi\go
 }{%
