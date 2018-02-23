@@ -1,10 +1,10 @@
 %%
-%% Beginning of file 'sample61.tex'
+%% Beginning of file 'sample62.tex'
 %%
-%% Modified 2016 September
+%% Modified 2018 January
 %%
 %% This is a sample manuscript marked up using the
-%% AASTeX v6.1 LaTeX 2e macros.
+%% AASTeX v6.2 LaTeX 2e macros.
 %%
 %% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
 %% (Copyright 2000-2015).  See the classfile for details.
@@ -22,16 +22,16 @@
 %% does not need to be explicitly stated.
 %%
 %%
-%% using aastex version 6.1
-\documentclass{aastex61}
+%% using aastex version 6.2
+\documentclass{aastex62}
 
 %% The default is a single spaced, 10 point font, single spaced article.
 %% There are 5 other style options available via an optional argument. They
 %% can be envoked like this:
 %%
-%% \documentclass[argument]{aastex61}
+%% \documentclass[argument]{aastex62}
 %% 
-%% where the arguement options are:
+%% where the layout options are:
 %%
 %%  twocolumn   : two text columns, 10 point font, single spaced article.
 %%                This is the most compact and represent the final published
@@ -42,6 +42,9 @@
 %%  modern      : a stylish, single text column, 12 point font, article with
 %% 		  wider left and right margins. This uses the Daniel
 %% 		  Foreman-Mackey and David Hogg design.
+%%  RNAAS       : Preferred style for Research Notes which are by design 
+%%                lacking an abstract and brief. DO NOT use \begin{abstract}
+%%                and \end{abstract} with this style.
 %%
 %% Note that you can submit to the AAS Journals in any of these 6 styles.
 %%
@@ -61,8 +64,8 @@
 %%
 %% these can be used in any combination, e.g.
 %%
-%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex61}
-
+%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex62}
+%%
 %% AASTeX v6.* now includes \hyperref support. While we have built in specific
 %% defaults into the classfile you can manually override them with the
 %% \hypersetup command. For example,
@@ -73,7 +76,7 @@
 %% bibliography to green, the file links to cyan, and the external links to
 %% magenta. Additional information on \hyperref options can be found here:
 %% https://www.tug.org/applications/hyperref/manual.html#x1-40003
-
+%%
 %% If you want to create your own macros, you can do so
 %% using \newcommand. Your macros should appear before
 %% the \begin{document} command.
@@ -83,15 +86,15 @@
 \newcommand\latex{La\TeX}
 
 %% Reintroduced the \received and \accepted commands from AASTeX v5.2
-\received{July 1, 2016}
-\revised{September 27, 2016}
+\received{January 1, 2018}
+\revised{January 7, 2018}
 \accepted{\today}
 %% Command to document which AAS Journal the manuscript was submitted to.
 %% Adds "Submitted to " the arguement.
 \submitjournal{ApJ}
 
 %% Mark up commands to limit the number of authors on the front page.
-%% Note that in AASTeX v6.1 a \collaboration call (see below) counts as
+%% Note that in AASTeX v6.2 a \collaboration call (see below) counts as
 %% an author in this case.
 %
 %\AuthorCollaborationLimit=3
@@ -120,7 +123,7 @@
 %%
 %% If you wish, you may supply running head information, although
 %% this information may be modified by the editorial offices.
-\shorttitle{\aastex\ sample article}
+\shorttitle{Sample article}
 \shortauthors{Schwarz et al.}
 %%
 %% You can add a light gray and diagonal water-mark to the first page 
@@ -138,11 +141,11 @@
 
 \begin{document}
 
-\title{An Example Article using \aastex v6.1\footnote{This version fixes many bugs from v6.0 and introduces some new features, primarily in the way the author and affiliations are now marked up.}}
+\title{An Example Article using \aastex v6.2\footnote{Released on January, 8th, 2018}}
 
 %% LaTeX will automatically break titles if they run longer than
 %% one line. However, you may use \\ to force a line break if
-%% you desire. In v6.1 you can include a footnote in the title.
+%% you desire. In v6.2 you can include a footnote in the title.
 
 %% A significant change from earlier AASTEX versions is in the structure for 
 %% calling author and affilations. The change was necessary to implement 
@@ -158,7 +161,7 @@
 %% the ID to make sure it is valid.
 %%
 %% Use \affiliation for affiliation information. The old \affil is now aliased
-%% to \affiliation. AASTeX v6.1 will automatically index these in the header.
+%% to \affiliation. AASTeX v6.2 will automatically index these in the header.
 %% When a duplicate is found its index will be the same as its previous entry.
 %%
 %% Note that \altaffilmark and \altaffiltext have been removed and thus 
@@ -175,7 +178,7 @@
 %%
 %% Use \email to set provide email addresses. Each \email will appear on its
 %% own line so you can put multiple email address in one \email call. A new
-%% \correspondingauthor command is available in V6.1 to identify the
+%% \correspondingauthor command is available in V6.2 to identify the
 %% corresponding author of the manuscript. It is the author's responsibility
 %% to make sure this name is also in the author list.
 %%
@@ -207,7 +210,7 @@ Washington, DC 20009-1231, USA}
 \nocollaboration
 
 \author{Amy Hendrickson}
-\altaffiliation{Creator of AASTeX v6.1}
+\altaffiliation{Creator of AASTeX v6.2}
 \affiliation{TeXnology Inc.}
 \collaboration{(LaTeX collaboration)}
 
@@ -225,7 +228,7 @@ Washington, DC 20009-1231, USA}
 %% depreciated in this version as it is no longer necessary. AASTeX 
 %% automatically takes care of all commas and "and"s between authors names.
 
-%% AASTeX 6.1 has the new \collaboration and \nocollaboration commands to
+%% AASTeX 6.2 has the new \collaboration and \nocollaboration commands to
 %% provide the collaboration status of a group of authors. These commands 
 %% can be used either before or after the list of corresponding authors. The
 %% argument for \collaboration is the collaboration identifier. Authors are
@@ -239,7 +242,7 @@ Washington, DC 20009-1231, USA}
 This example manuscript is intended to serve as a tutorial and template for
 authors to use when writing their own AAS Journal articles. The manuscript
 includes a history of \aastex\ and documents the new features in the
-previous version, 6.0, as well as the new features in version 6.1. This
+previous versions as well as the new features in version 6.2. This
 manuscript includes many figure and table examples to illustrate these new
 features.  Information on features not explicitly mentioned in the article
 can be viewed in the manuscript comments or more extensive online
@@ -248,7 +251,9 @@ bibliography with their own and submit the resulting manuscript to the AAS
 Journals peer review system.  The first lesson in the tutorial is to remind
 authors that the AAS Journals, the Astrophysical Journal (ApJ), the
 Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all
-have a 250 word limit for the abstract.  If you exceed this length the
+have a 250 word limit for the abstract\footnote{Note that manuscripts 
+submitted to the new Research Notes of the American Astronomical Society 
+(RNAAS) do \textbf{not} have abstracts.}.  If you exceed this length the
 Editorial office will ask you to shorten it.
 
 \end{abstract}
@@ -268,7 +273,7 @@ miscellaneous --- catalogs --- surveys}
 %% cross-references to sections, equations, tables, and figures.
 %% That way, if you change the order of any elements, LaTeX will
 %% automatically renumber them.
-
+%%
 %% We recommend that authors also use the natbib \citep
 %% and \citet commands to identify citations.  The citations are
 %% tied to the reference list via symbolic KEYs. The KEY corresponds
@@ -323,9 +328,10 @@ When planning the next \aastex\ release the popularity of emulateapj played
 an important roll in the decision to drop the old base code and adopt and
 modify emulateapj for \aastex\ v6.+ instead.  The change brings \aastex\
 inline with what the majority of authors are already using while still
-delivering new and improved features.  \aastex\ v6.0 and v6.1 were written
-by Amy Hendrickson and released in January and October 2016, respectively.
-Some of the new features in v6.0 included:
+delivering new and improved features.  \aastex\ v6.0 through v6.2 were written
+by Amy Hendrickson and released in January 2016 (v6.0), October 2016 (v6.1),
+and January 2018 (v6.2), respectively.  Some of the new features in v6.0 
+included:
 
 \begin{enumerate}
 \item improved citations for third party data repositories and software,
@@ -339,7 +345,7 @@ decimal alignment, automatic column math mode and numbering, plus splitting of
 wide tables.
 \end{enumerate}
 
-The new features in v6.1 are:
+The features in v6.1 were:
 
 \begin{enumerate}
 \item ORCID support for preprints,
@@ -352,8 +358,19 @@ The new features in v6.1 are:
 \item new typeset style options.
 \end{enumerate}
 
+The new features in v6.2 are:
+
+\begin{enumerate}
+\item A new RNAAS style option for Research Note manuscripts,
+\item Titles no longer put in all caps,
+\item No page skip between the title page and article body,
+\item re-introduce RevTeX's widetext environment for long lines in
+      two column style formats, and
+\item upgrade to the {\tt\string\doi} command.
+\end{enumerate}
+
 The rest of this article provides information and examples on how to create
-your own AAS Journal manuscript with v6.1.  Special emphasis is placed on
+your own AAS Journal manuscript with v6.2.  Special emphasis is placed on
 how to use the full potential of \aastex\ v6+.  The next section describes
 the different manuscript styles available and how they differ from past
 releases.  Section \ref{sec:floats} describes how tables and figures are
@@ -371,7 +388,7 @@ in the comments of this \latex\ file and in the online documentation at
 
 \section{Manuscript styles} \label{sec:style}
 
-The default style in \aastex\ v6.1 is a tight single column style, e.g.  10
+The default style in \aastex\ v6.2 is a tight single column style, e.g.  10
 point font, single spaced.  The single column style is very useful for
 article with wide equations. It is also the easiest to style to work with
 since figures and tables, see Section \ref{sec:floats}, will span the
@@ -380,7 +397,7 @@ entire page, reducing the need for address float sizing.
 To invoke a two column style similar to the what is produced in
 the published PDF copy use \\
 
-\noindent {\tt\string\documentclass[twocolumn]\{aastex61\}}. \\
+\noindent {\tt\string\documentclass[twocolumn]\{aastex62\}}. \\
 
 \noindent Note that in the two column style figures and tables will only
 span one column unless specifically ordered across both with the ``*'' flag,
@@ -407,6 +424,9 @@ output that has wider left and right margins. It is designed to have fewer
 words per line to improve reader retention. It also looks better on devices
 with smaller displays such as smart phones.
 
+For a Research Note use the {\tt\string RNAAS} option which will produce a
+manuscript with no abstract and in the {\tt\string modern} style.
+
 \section{Floats} \label{sec:floats}
 
 Floats are non-text items that generally can not be split over a page.
@@ -428,6 +448,9 @@ authors textbf{not} spend significant time trying to get float placement
 perfect for peer review.  The AAS Journal's publisher has sophisticated
 typesetting software that will produce the optimal layout during
 production.
+
+Note that authors of Research Notes are only allowed one float, either one
+table or one figure.
 
 \startlongtable
 \begin{deluxetable}{c|cc}
@@ -495,7 +518,7 @@ when a {\tt\string tabular} is surrounded by {\tt\string\begin\{table\}} ...
 {\tt\string\end\{table\}} is it a true float and the rules and suggestions
 above apply.
 
-In AASTeX v6.1 all deluxetables are float tables and thus if they are
+In AASTeX v6.2 all deluxetables are float tables and thus if they are
 longer than a page will spill off the bottom. Long deluxetables should
 begin with the {\tt\string\startlongtable} command. This initiates a
 longtable environment.  Authors might have to use {\tt\string\clearpage} to
@@ -821,7 +844,7 @@ Model 2 & IELs& -51000 &    2025$\pm      26$& 2494$\pm      32$&$<     37$&$<  
 %% The "ht!" tells LaTeX to put the figure "here" first, at the "top" next
 %% and to override the normal way of calculating a float position
 \begin{figure}[ht!]
-\plotone{cost.eps}
+\plotone{cost-eps-converted-to.pdf}
 \caption{The subscription and author publication costs from 1991 to 2013.
 The data comes from Table \ref{tab:table}.\label{fig:general}}
 \end{figure}
@@ -846,7 +869,7 @@ from Figures \ref{fig:f2} through \ref{fig:fig4} are taken from Table 2 of
 \citet{2011ApJS..197...31S}. 
 
 \begin{figure}
-\plottwo{RS_Oph.eps}{U_Sco.eps}
+\plottwo{RS_Oph-eps-converted-to.pdf}{U_Sco-eps-converted-to.pdf}
 \caption{Swift/XRT X-ray light curves of RS Oph and U Sco which represent
 the two canonical recurrent types, a long period system with a red giant
 secondary and a short period system with a dwarf/sub-dwarf secondary,
@@ -893,14 +916,14 @@ figure constructed with six individual EPS files using the
 {\tt\string\gridline} option.
 
 \begin{figure*}
-\gridline{\fig{V2491_Cyg.eps}{0.3\textwidth}{(a)}
-          \fig{CSS081007.eps}{0.3\textwidth}{(b)}
-          \fig{LMC_2009.eps}{0.3\textwidth}{(c)}
+\gridline{\fig{V2491_Cyg-eps-converted-to.pdf}{0.3\textwidth}{(a)}
+          \fig{CSS081007-eps-converted-to.pdf}{0.3\textwidth}{(b)}
+          \fig{LMC_2009-eps-converted-to.pdf}{0.3\textwidth}{(c)}
           }
-\gridline{\fig{RS_Oph.eps}{0.3\textwidth}{(d)}
-          \fig{U_Sco.eps}{0.3\textwidth}{(e)}
+\gridline{\fig{RS_Oph-eps-converted-to.pdf}{0.3\textwidth}{(d)}
+          \fig{U_Sco-eps-converted-to.pdf}{0.3\textwidth}{(e)}
           }
-\gridline{\fig{KT_Eri.eps}{0.3\textwidth}{(f)}}
+\gridline{\fig{KT_Eri-eps-converted-to.pdf}{0.3\textwidth}{(f)}}
 \caption{Inverted pyramid figure of six individual files. The nova are
 (a) V2491 Cyg, (b) HV Cet, (c) LMC 2009, (d) RS Oph, (e) U Sco, and
 (f) KT Eri.\label{fig:pyramid}}
@@ -929,7 +952,7 @@ Set caption will appear in the resulting PDF.
 \figsetgrpstart
 \figsetgrpnum{1.1}
 \figsetgrptitle{KT Eri}
-\figsetplot{KT_Eri.eps}
+\figsetplot{KT_Eri-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -937,7 +960,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.2}
 \figsetgrptitle{RS Oph}
-\figsetplot{RS_Oph.eps}
+\figsetplot{RS_Oph-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -945,7 +968,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.3}
 \figsetgrptitle{U Sco}
-\figsetplot{U_Sco.eps}
+\figsetplot{U_Sco-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -953,7 +976,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.4}
 \figsetgrptitle{V2491 Cyg}
-\figsetplot{V2491_Cyg.eps}
+\figsetplot{V2491_Cyg-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -961,7 +984,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.5}
 \figsetgrptitle{Nova LMC 2009}
-\figsetplot{LMC_2009.eps}
+\figsetplot{LMC_2009-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -969,7 +992,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.6}
 \figsetgrptitle{HV Cet}
-\figsetplot{CSS081007.eps}
+\figsetplot{CSS081007-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -977,7 +1000,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.7}
 \figsetgrptitle{V2672 Oph}
-\figsetplot{V2672_Oph.eps}
+\figsetplot{V2672_Oph-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -985,7 +1008,7 @@ outburst.}
 \figsetgrpstart
 \figsetgrpnum{1.8}
 \figsetgrptitle{V407 Cyg}
-\figsetplot{V407_Cyg.eps}
+\figsetplot{V407_Cyg-eps-converted-to.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
 outburst.}
 \figsetgrpend
@@ -993,7 +1016,7 @@ outburst.}
 \figsetend
 
 \begin{figure}
-\plotone{KT_Eri.eps}
+\plotone{KT_Eri-eps-converted-to.pdf}
 \caption{The Swift/XRT X-ray light curve for the first year after
 outburst of the suspected recurrent nova KT Eri. At a maximum count rate of 
 328 ct/s, KT Eri was the brightest nova in X-rays observed to date. All 
@@ -1012,7 +1035,7 @@ The associated figure caption should indicate to the reader exactly what the
 animation shows and that the animation is available online.
 
 \begin{figure}
-\plotone{video3.eps}
+\plotone{video3-eps-converted-to.pdf}
 \caption{Example image from the animation which is available in the electronic
 edition.}
 \end{figure}
@@ -1180,7 +1203,7 @@ In the bibliography the format for data or code follows this format: \\
 
 \citet{2015ApJ...805...23C} provides a example of how the citation in the
 article references the external code at
-\url{http://dx.doi.org/10.5281/zenodo.15991}.  Unfortunately, bibtex does
+\doi{10.5281/zenodo.15991}.  Unfortunately, bibtex does
 not have specific bibtex entries for these types of references so the
 ``@misc'' type should be used.  The Repository tutorial explains how to
 code the ``@misc'' type correctly.  The most recent aasjournal.bst file,
@@ -1195,7 +1218,10 @@ We thank all the people that have made this AASTeX what it is today.  This
 includes but not limited to Bob Hanisch, Chris Biemesderfer, Lee Brotzman,
 Pierre Landau, Arthur Ogawa, Maxim Markevitch, Alexey Vikhlinin and Amy
 Hendrickson. Also special thanks to David Hogg and Daniel Foreman-Mackey
-for the new "modern" style design. It is super cool!
+for the new "modern" style design. Considerable help was provided via bug
+reports and hacks from numerous people including Patricio Cubillos, Alex
+Drlica-Wagner, Sean Lake, Michele Bannister, Peter Williams, and Jonathan
+Gagne.
 
 %% To help institutions obtain information on the effectiveness of their 
 %% telescopes the AAS Journals has created a group of keywords for telescope 
@@ -1261,7 +1287,7 @@ is \$27 per word quantum and \$30 for all other quantum type.
 \section{Rotating tables} \label{sec:rotate}
 
 The process of rotating tables into landscape mode is slightly different in
-\aastex v6.1. Instead of the {\tt\string\rotate} command, a new environment
+\aastex v6.2. Instead of the {\tt\string\rotate} command, a new environment
 has been created to handle this task. To place a single page table in a
 landscape mode start the table portion with
 {\tt\string\begin\{rotatetable\}} and end with
@@ -1356,6 +1382,9 @@ V838 Her & 5 (197) & 2448340.5 (197) & 2 (198) & \nodata & 0.5$\pm0.1$ (198) & 2
 \end{deluxetable*}
 \end{longrotatetable}
 
+A handy "cheat sheat" that provides the necessary LaTeX to produce 17 
+different types of tables is available at \url{http://journals.aas.org/authors/aastex/aasguide.html#table_cheat_sheet}.
+
 %% The reference list follows the main body and any appendices.
 %% Use LaTeX's thebibliography environment to mark up your reference list.
 %% Note \begin{thebibliography} is followed by an empty set of
@@ -1405,4 +1434,4 @@ V838 Her & 5 (197) & 2448340.5 (197) & 2 (198) & \nodata & 0.5$\pm0.1$ (198) & 2
 
 \end{document}
 
-% End of file `sample61.tex'.
+% End of file `sample62.tex'.
