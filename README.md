@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.593626.svg)](https://doi.org/10.5281/zenodo.593626)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1209290.svg)](https://doi.org/10.5281/zenodo.1209290)
 
 ## AASTeX6
 The Version 6.2 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 8, 2018. A list of updates and changes provided by Version 6.2 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). Version 6.2 is backwards compatible with v6.1 but no prior version of AASTeX.
@@ -28,8 +28,7 @@ Outside of issues or pull requests, please contact the AASTeX team for help at o
 | [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](https://doi.org/10.5281/zenodo.45282)|
 | [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd       |
 | [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228)       |
-
-  [9e852317]: https://github.com/augustfly/AASTeX60/releases/tag/v6.0.1 "v6.0.1"
+| [v6.2](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2018 February 23 | [10.5281/zenodo.1209290](https://doi.org/10.5281/zenodo.1209290)       |
 
 
 ## Credit
