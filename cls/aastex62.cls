@@ -6255,7 +6255,7 @@ needed. It will not do anything.^^J Please use
 \ifnum\AuthorCollaborationLimit=1
 \let\@listand\relax
 \fi
-  \ignorespaces\leavevmode\hbox{#1\unskip\@listcomma}% nice, keeps name from breaking across lines
+  \ignorespaces\leavevmode\hbox{#1\unskip}% nice, keeps name from breaking across lines
 \fi
   \begingroup
 \ifnum\countauthors>\AuthorCollaborationLimit\else
@@ -6270,7 +6270,7 @@ needed. It will not do anything.^^J Please use
 {\ifnum\countauthors>\AuthorCollaborationLimit\endgroup{}{}%% <<< bug fix, added \endgroup{}{}
 \else
 \endgroup{\comma@space}{}\frontmatter@footnote{#2}\fi}%
-\ifnum\countauthors>\AuthorCollaborationLimit\else  \space
+\ifnum\countauthors>\AuthorCollaborationLimit\else\@listcomma  \space
 \@listand\fi 
 }%
 
