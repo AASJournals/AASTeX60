@@ -1285,6 +1285,7 @@ FUNCTION {incollection}
 %    }
 %  if$
   format.pages "pages" output.check
+  format.pid output
   format.url output
   fin.entry
 }
@@ -1313,6 +1314,7 @@ FUNCTION {inproceedings}
 %    }
 %  if$
   format.pages output
+  format.pid output
   format.url output
   fin.entry
 }
