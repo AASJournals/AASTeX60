@@ -1,16 +1,16 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1209290.svg)](https://doi.org/10.5281/zenodo.1209290)
 
 ## AASTeX6
-The Version 6.2 style files and documentation for authoring [AAS Journal](http://journals.aas.org) articles in LaTeX2e were released on January 8, 2018. A list of updates and changes provided by Version 6.2 can be found in the [AASTeX Revision History](http://journals.aas.org/authors/aastex/revisionhistory.html). Version 6.2 is backwards compatible with v6.1 but no prior version of AASTeX.
+The Version 6.2 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on January 8, 2018. A list of updates and changes provided by Version 6.2 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.2 is backwards compatible with v6.1 but no prior version of AASTeX.
 
 ## BibTeX
 This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated October 26, 2017. This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. The most recent update added anchored links to reference source material, e.g., links to article DOIs, arXiv preprints, and/or [ASCL](http://ascl.net) identifiers.
 
 ## Download
-You may download the most recent version from this repository or from the [AAS Journals website](http://journals.aas.org/authors/aastex.html). 
+You may download the most recent version from this repository or from the [AAS Journals website](https://journals.aas.org/aastex-package-for-manuscript-preparation/). 
 
 ## Documentation
-In addition to the [sample files](sample) provided here, an extensive AASTeX guide can be found at our [AAS Journals website](http://journals.aas.org/authors/aastex/aasguide.html). Broader style, data, and graphics guides are also [available](http://journals.aas.org/authors/). 
+In addition to the [sample files](sample) provided here, an extensive AASTeX guide can be found at our [AAS Journals website](https://journals.aas.org/aastex-package-for-manuscript-preparation/). Broader style, data, and graphics guides are also [available](https://journals.aas.org/author-resources/). 
 
 ## Development model
 AASTeX development is performed outside of the GitHub platform, but incremental updates from our developers are posted here regularly, and we gladly accept issues and user pull requests. 
