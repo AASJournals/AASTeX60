@@ -5096,7 +5096,7 @@ width 0pt\currtabletypesize{\sc Note}---{#1}\vskip1pt}}
 
 \def\tablenotetext#1#2{\vskip1pt{\currtabletypesize\vskip1pt\indent\vrule
 height 11pt depth
-2pt width0pt\relax$^{\hbox to 5pt{$#1$}}$#2\vskip1pt}}
+2pt width0pt\relax$^{\hbox to 5pt{#1}}$#2\vskip1pt}}
 
 \def\tablerefs#1{{\small\vskip3pt\indent\vrule height 11pt depth 2pt
 width 0pt\currtabletypesize{\bf References}---{#1}\vskip1sp}}
