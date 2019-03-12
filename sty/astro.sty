@@ -1,3 +1,89 @@
+\usepackage{url}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% From earlier version of AASTeX, for usefulness and 
+%% backward compatibility, with some requested additions
+
+\let\jnl@style=\rmfamily
+\def\ref@jnl#1{{\jnl@style#1}}%
+
+%%%
+\newcommand\memsai{\ref@jnl{Mem.~Soc.~Astron.~Italiana}}%
+          % Mem. Societa Astronomica Italiana
+%% longer version:
+\newcommand\memsocai{Mem. Societ\`a Astronomica Italiana}
+\newcommand\aspconf{Ast. Soc. of the Pac. Conference Series}
+
+\let\astap=\aap
+\let\apjlett=\apjl
+\let\apjsupp=\apjs
+\let\applopt=\ao
+
+%%% More useful commands from Earlier version of Aastex:
+\let\la=\lesssim            % For Springer A&A compliance...
+\let\ga=\gtrsim
+
+\let\farcm\farcm@mss
+\let\farcs\farcs@mss
+
+\def\farcm@apj{%
+ \mbox{.\kern -0.7ex\raisebox{.9ex}{\scriptsize$\prime$}}%
+}%
+
+\def\farcs@apj{%
+ \mbox{%
+  \kern  0.13ex.%
+  \kern -0.95ex\raisebox{.9ex}{\scriptsize$\prime\prime$}%
+  \kern -0.1ex%
+ }%
+}%
+
+\def\chem@bnd#1{%
+ {%
+  \kern.1em\relax
+  \setbox\z@\hbox{M}%
+  \dimen@ii.8em\relax
+  \p@=.1em\relax
+  \dimen@.5\ht\z@\dimen@i-\dimen@
+  \advance\dimen@1.5\p@\advance\dimen@i-1.0\p@
+  #1%
+  \kern.1em\relax
+  }%
+ }%
+\def\@sbnd{%
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ }%
+\def\@dbnd{%
+ \advance\dimen@-0.5\p@\advance\dimen@i0.5\p@
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
+ \hskip-\dimen@ii
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ }%
+\def\@tbnd{%
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
+ \hskip-\dimen@ii
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
+ \hskip-\dimen@ii
+ \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
+ }%
+
+\renewcommand\LaTeX{%
+ \leavevmode
+ L%
+ \raise.42ex\hbox{%
+  \count@=\the\fam
+  $\fam\count@\scriptstyle\kern-.3em A$%
+ }%
+ \kern-.15em\TeX
+}%
+
+
+
 \newcommand\anchor[2]{#2}% 
 \renewcommand\url{\@dblarg\@url}% 
 \def\@url[#1]{\anchor{#1}}% 
@@ -6,10 +92,10 @@
 \def\ref@jnl#1{{\jnl@style#1}}% 
 \newcommand\aj{\ref@jnl{AJ}}%        % Astronomical Journal 
 \newcommand\araa{\ref@jnl{ARA\&A}}%  % Annual Review of Astron and Astrophys 
-\renewcommand\apj{\ref@jnl{ApJ}}%    % Astrophysical Journal ++
+\newcommand\apj{\ref@jnl{ApJ}}%    % Astrophysical Journal ++
 \newcommand\apjl{\ref@jnl{ApJL}}     % Astrophysical Journal, Letters 
 \newcommand\apjs{\ref@jnl{ApJS}}%    % Astrophysical Journal, Supplement 
-\renewcommand\ao{\ref@jnl{ApOpt}}%   % Applied Optics ++
+\newcommand\ao{\ref@jnl{ApOpt}}%   % Applied Optics ++
 \newcommand\apss{\ref@jnl{Ap\&SS}}%  % Astrophysics and Space Science 
 \newcommand\aap{\ref@jnl{A\&A}}%     % Astronomy and Astrophysics 
 \newcommand\aapr{\ref@jnl{A\&A~Rv}}%  % Astronomy and Astrophysics Reviews 
@@ -20,12 +106,12 @@
 \newcommand\jrasc{\ref@jnl{JRASC}}%   % Journal of the RAS of Canada 
 \newcommand\memras{\ref@jnl{MmRAS}}%  % Memoirs of the RAS 
 \newcommand\mnras{\ref@jnl{MNRAS}}%   % Monthly Notices of the RAS 
-\renewcommand\pra{\ref@jnl{PhRvA}}% % Physical Review A: General Physics ++
-\renewcommand\prb{\ref@jnl{PhRvB}}% % Physical Review B: Solid State ++
-\renewcommand\prc{\ref@jnl{PhRvC}}% % Physical Review C ++
-\renewcommand\prd{\ref@jnl{PhRvD}}% % Physical Review D ++
-\renewcommand\pre{\ref@jnl{PhRvE}}% % Physical Review E ++
-\renewcommand\prl{\ref@jnl{PhRvL}}% % Physical Review Letters 
+\newcommand\pra{\ref@jnl{PhRvA}}% % Physical Review A: General Physics ++
+\newcommand\prb{\ref@jnl{PhRvB}}% % Physical Review B: Solid State ++
+\newcommand\prc{\ref@jnl{PhRvC}}% % Physical Review C ++
+\newcommand\prd{\ref@jnl{PhRvD}}% % Physical Review D ++
+\newcommand\pre{\ref@jnl{PhRvE}}% % Physical Review E ++
+\newcommand\prl{\ref@jnl{PhRvL}}% % Physical Review Letters 
 \newcommand\pasp{\ref@jnl{PASP}}%     % Publications of the ASP 
 \newcommand\pasj{\ref@jnl{PASJ}}%     % Publications of the ASJ 
 \newcommand\qjras{\ref@jnl{QJRAS}}%   % Quarterly Journal of the RAS 
@@ -34,7 +120,7 @@
 \newcommand\sovast{\ref@jnl{Soviet~Ast.}}% % Soviet Astronomy 
 \newcommand\ssr{\ref@jnl{SSRv}}% % Space Science Reviews 
 \newcommand\zap{\ref@jnl{ZA}}%       % Zeitschrift fuer Astrophysik 
-\renewcommand\nat{\ref@jnl{Nature}}%  % Nature 
+\newcommand\nat{\ref@jnl{Nature}}%  % Nature 
 \newcommand\iaucirc{\ref@jnl{IAUC}}% % IAU Cirulars 
 \newcommand\aplett{\ref@jnl{Astrophys.~Lett.}}%  % Astrophysics Letters 
 \newcommand\apspr{\ref@jnl{Astrophys.~Space~Phys.~Res.}}% % Astrophysics Space Physics Research 
@@ -42,10 +128,10 @@
 \newcommand\fcp{\ref@jnl{FCPh}}%   % Fundamental Cosmic Physics 
 \newcommand\gca{\ref@jnl{GeoCoA}}% % Geochimica Cosmochimica Acta 
 \newcommand\grl{\ref@jnl{Geophys.~Res.~Lett.}}%  % Geophysics Research Letters 
-\renewcommand\jcp{\ref@jnl{JChPh}}%     % Journal of Chemical Physics 
+\newcommand\jcp{\ref@jnl{JChPh}}%     % Journal of Chemical Physics 
 \newcommand\jgr{\ref@jnl{J.~Geophys.~Res.}}%     % Journal of Geophysics Research 
 \newcommand\jqsrt{\ref@jnl{JQSRT}}%   % Journal of Quantitiative Spectroscopy and Radiative Trasfer 
-\newcommand\memsai{\ref@jnl{MmSAI}}% % Mem. Societa Astronomica Italiana 
+\renewcommand\memsai{\ref@jnl{MmSAI}}% % Mem. Societa Astronomica Italiana 
 \newcommand\nphysa{\ref@jnl{NuPhA}}%     % Nuclear Physics A 
 \newcommand\physrep{\ref@jnl{PhR}}%       % Physics Reports 
 \newcommand\physscr{\ref@jnl{PhyS}}%        % Physica Scripta 
@@ -121,8 +207,8 @@
 \fi\fi\fi\fi\fi\fi
 \rmfamily\@Roman{#2}}\relax}% 
 
-\renewcommand\case[2]{\mbox{$\frac{#1}{#2}$}}% 
-\renewcommand\slantfrac{\case}% 
+\newcommand\case[2]{\mbox{$\frac{#1}{#2}$}}% 
+\newcommand\slantfrac{\case}% 
 \newcommand\onehalf{\slantfrac{1}{2}}% 
 \newcommand\onethird{\slantfrac{1}{3}}% 
 \newcommand\twothirds{\slantfrac{2}{3}}% 
@@ -131,8 +217,9 @@
 \newcommand\ubvr{\mbox{$U\!BV\!R$}}%% UBVR system 
 \newcommand\ub{\mbox{$U\!-\!B$}}%   % U-B 
 \newcommand\bv{\mbox{$B\!-\!V$}}%   % B-V 
-\renewcommand\vr{\mbox{$V\!-\!R$}}%   % V-R ++
+\newcommand\vr{\mbox{$V\!-\!R$}}%   % V-R ++
 \newcommand\ur{\mbox{$U\!-\!R$}}%   % U-R 
+
 
 %% need this change so that it works correctly in tables:
 {\catcode`\$=\active

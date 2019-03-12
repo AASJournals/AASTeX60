@@ -7,6 +7,8 @@
 
 \def\currversion{6.2}
 
+\usepackage{astro}
+
 %%
 %%    These files are distributed
 %%    WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -5709,86 +5711,6 @@ on page
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% From earlier version of AASTeX, for usefulness and 
-%% backward compatibility, with some requested additions
-
-\let\jnl@style=\rmfamily
-\def\ref@jnl#1{{\jnl@style#1}}%
-
-%%%
-\renewcommand\memsai{\ref@jnl{Mem.~Soc.~Astron.~Italiana}}%
-          % Mem. Societa Astronomica Italiana
-%% longer version:
-\newcommand\memsocai{Mem. Societ\`a Astronomica Italiana}
-\newcommand\aspconf{Ast. Soc. of the Pac. Conference Series}
-
-\let\astap=\aap
-\let\apjlett=\apjl
-\let\apjsupp=\apjs
-\let\applopt=\ao
-
-%%% More useful commands from Earlier version of Aastex:
-\let\la=\lesssim            % For Springer A&A compliance...
-\let\ga=\gtrsim
-
-\let\farcm\farcm@mss
-\let\farcs\farcs@mss
-
-\def\farcm@apj{%
- \mbox{.\kern -0.7ex\raisebox{.9ex}{\scriptsize$\prime$}}%
-}%
-
-\def\farcs@apj{%
- \mbox{%
-  \kern  0.13ex.%
-  \kern -0.95ex\raisebox{.9ex}{\scriptsize$\prime\prime$}%
-  \kern -0.1ex%
- }%
-}%
-
-\def\chem@bnd#1{%
- {%
-  \kern.1em\relax
-  \setbox\z@\hbox{M}%
-  \dimen@ii.8em\relax
-  \p@=.1em\relax
-  \dimen@.5\ht\z@\dimen@i-\dimen@
-  \advance\dimen@1.5\p@\advance\dimen@i-1.0\p@
-  #1%
-  \kern.1em\relax
-  }%
- }%
-\def\@sbnd{%
- \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- }%
-\def\@dbnd{%
- \advance\dimen@-0.5\p@\advance\dimen@i0.5\p@
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
- \hskip-\dimen@ii
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- }%
-\def\@tbnd{%
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
- \hskip-\dimen@ii
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- \advance\dimen@-1.5\p@\advance\dimen@i1.5\p@
- \hskip-\dimen@ii
- \vrule\@height\dimen@\@depth\dimen@i\@width\dimen@ii\nobreak
- }%
-
-\renewcommand\LaTeX{%
- \leavevmode
- L%
- \raise.42ex\hbox{%
-  \count@=\the\fam
-  $\fam\count@\scriptstyle\kern-.3em A$%
- }%
- \kern-.15em\TeX
-}%
 
 %% added Feb 2, 2016, redefining definition of \caption made with hyperref
 %% package. Making \caption[] be the default, to prevent sending caption 
