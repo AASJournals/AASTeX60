@@ -2004,6 +2004,12 @@ width0pt\relax#1$}\ignorespaces}
 final=true
  ]{hyperref}
 
+%% Names sections, subsections, and subsubsection so that autoref follows default ApJ style.
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Additions to  AASTeX by Amy Hendrickson, TeXnology Inc, August 17, 2015
