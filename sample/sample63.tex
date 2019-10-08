@@ -1,10 +1,10 @@
+
+%% Beginning of file 'sample63.tex'
 %%
-%% Beginning of file 'sample62.tex'
-%%
-%% Modified 2018 January
+%% Modified 2019 June
 %%
 %% This is a sample manuscript marked up using the
-%% AASTeX v6.2 LaTeX 2e macros.
+%% AASTeX v6.3 LaTeX 2e macros.
 %%
 %% AASTeX is now based on Alexey Vikhlinin's emulateapj.cls 
 %% (Copyright 2000-2015).  See the classfile for details.
@@ -17,19 +17,19 @@
 %% The first piece of markup in an AASTeX v6.x document is the \documentclass
 %% command. LaTeX will ignore any data that comes before this command. The 
 %% documentclass can take an optional argument to modify the output style.
-%% The command below calls the preprint style  which will produce a tightly 
+%% The command below calls the preprint style which will produce a tightly 
 %% typeset, one-column, single-spaced document.  It is the default and thus
 %% does not need to be explicitly stated.
 %%
 %%
-%% using aastex version 6.2
-\documentclass{aastex62}
+%% using aastex version 6.3
+\documentclass{aastex63}
 
 %% The default is a single spaced, 10 point font, single spaced article.
 %% There are 5 other style options available via an optional argument. They
-%% can be envoked like this:
+%% can be invoked like this:
 %%
-%% \documentclass[argument]{aastex62}
+%% \documentclass[arguments]{aastex63}
 %% 
 %% where the layout options are:
 %%
@@ -48,34 +48,41 @@
 %%
 %% Note that you can submit to the AAS Journals in any of these 6 styles.
 %%
-%% There are other optional arguments one can envoke to allow other stylistic
+%% There are other optional arguments one can invoke to allow other stylistic
 %% actions. The available options are:
 %%
-%%  astrosymb    : Loads Astrosymb font and define \astrocommands. 
-%%  tighten      : Makes baselineskip slightly smaller, only works with 
-%%                 the twocolumn substyle.
-%%  times        : uses times font instead of the default
-%%  linenumbers  : turn on lineno package.
-%%  trackchanges : required to see the revision mark up and print its output
-%%  longauthor   : Do not use the more compressed footnote style (default) for 
-%%                 the author/collaboration/affiliations. Instead print all
-%%                 affiliation information after each name. Creates a much
-%%                 long author list but may be desirable for short author papers
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default
+%%   linenumbers  : turn on lineno package.
+%%   trackchanges : required to see the revision mark up and print its output
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations and acknowledgments 
+%%                  for dual anonymous review.
 %%
 %% these can be used in any combination, e.g.
 %%
-%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex62}
+%% \documentclass[twocolumn,linenumbers,trackchanges]{aastex63}
 %%
 %% AASTeX v6.* now includes \hyperref support. While we have built in specific
 %% defaults into the classfile you can manually override them with the
 %% \hypersetup command. For example,
 %%
-%%\hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
 %%
 %% will change the color of the internal links to red, the links to the
 %% bibliography to green, the file links to cyan, and the external links to
 %% magenta. Additional information on \hyperref options can be found here:
 %% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% Note that in v6.3 "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
 %%
 %% If you want to create your own macros, you can do so
 %% using \newcommand. Your macros should appear before
@@ -86,21 +93,37 @@
 \newcommand\latex{La\TeX}
 
 %% Reintroduced the \received and \accepted commands from AASTeX v5.2
-\received{January 1, 2018}
-\revised{January 7, 2018}
+\received{June 1, 2019}
+\revised{January 10, 2019}
 \accepted{\today}
 %% Command to document which AAS Journal the manuscript was submitted to.
-%% Adds "Submitted to " the arguement.
-\submitjournal{ApJ}
+%% Adds "Submitted to " the argument.
+\submitjournal{AJ}
 
-%% Mark up commands to limit the number of authors on the front page.
-%% Note that in AASTeX v6.2 a \collaboration call (see below) counts as
-%% an author in this case.
+%% For manuscript that include authors in collaborations, AASTeX v6.3
+%% builds on the \collaboration command to allow greater freedom to 
+%% keep the traditional author+affiliation information but only show
+%% subsets. The \collaboration command now must appear AFTER the group
+%% of authors in the collaboration and it takes TWO arguments. The last
+%% is still the collaboration identifier. The text given in this
+%% argument is what will be shown in the manuscript. The first argument
+%% is the number of author above the \collaboration command to show with
+%% the collaboration text. If there are authors that are not part of any
+%% collaboration the \nocollaboration command is used. This command takes
+%% one argument which is also the number of authors above to show. A
+%% dashed line is shown to indicate no collaboration. This example manuscript
+%% shows how these commands work to display specific set of authors 
+%% on the front page.
+%%
+%% For manuscript without any need to use \collaboration the 
+%% \AuthorCollaborationLimit command from v6.2 can still be used to 
+%% show a subset of authors.
 %
-%\AuthorCollaborationLimit=3
+%\AuthorCollaborationLimit=2
 %
-%% Will only show Schwarz, Muench and "the AAS Journals Data Scientist 
-%% collaboration" on the front page of this example manuscript.
+%% will only show Schwarz & Muench on the front page of the manuscript
+%% (assuming the \collaboration and \nocollaboration commands are
+%% commented out).
 %%
 %% Note that all of the author will be shown in the published article.
 %% This feature is meant to be used prior to acceptance to make the
@@ -128,10 +151,10 @@
 %%
 %% You can add a light gray and diagonal water-mark to the first page 
 %% with this command:
-% \watermark{text}
+%% \watermark{text}
 %% where "text", e.g. DRAFT, is the text to appear.  If the text is 
 %% long you can control the water-mark size with:
-%  \setwatermarkfontsize{dimension}
+%% \setwatermarkfontsize{dimension}
 %% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,27 +164,30 @@
 
 \begin{document}
 
-\title{An Example Article using \aastex v6.2\footnote{Released on January, 8th, 2018}}
+\title{Template \aastex Article with Examples: 
+v6.3\footnote{Released on June, 10th, 2019}}
 
 %% LaTeX will automatically break titles if they run longer than
 %% one line. However, you may use \\ to force a line break if
-%% you desire. In v6.2 you can include a footnote in the title.
+%% you desire. In v6.3 you can include a footnote in the title.
 
 %% A significant change from earlier AASTEX versions is in the structure for 
-%% calling author and affilations. The change was necessary to implement 
-%% autoindexing of affilations which prior was a manual process that could 
+%% calling author and affiliations. The change was necessary to implement 
+%% auto-indexing of affiliations which prior was a manual process that could 
 %% easily be tedious in large author manuscripts.
 %%
 %% The \author command is the same as before except it now takes an optional
-%% arguement which is the 16 digit ORCID. The syntax is:
+%% argument which is the 16 digit ORCID. The syntax is:
 %% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
 %%
 %% This will hyperlink the author name to the author's ORCID page. Note that
 %% during compilation, LaTeX will do some limited checking of the format of
-%% the ID to make sure it is valid.
+%% the ID to make sure it is valid. If the "orcid-ID.png" image file is 
+%% present or in the LaTeX pathway, the OrcID icon will appear next to
+%% the authors name.
 %%
 %% Use \affiliation for affiliation information. The old \affil is now aliased
-%% to \affiliation. AASTeX v6.2 will automatically index these in the header.
+%% to \affiliation. AASTeX v6.3 will automatically index these in the header.
 %% When a duplicate is found its index will be the same as its previous entry.
 %%
 %% Note that \altaffilmark and \altaffiltext have been removed and thus 
@@ -178,7 +204,7 @@
 %%
 %% Use \email to set provide email addresses. Each \email will appear on its
 %% own line so you can put multiple email address in one \email call. A new
-%% \correspondingauthor command is available in V6.2 to identify the
+%% \correspondingauthor command is available in V6.3 to identify the
 %% corresponding author of the manuscript. It is the author's responsibility
 %% to make sure this name is also in the author list.
 %%
@@ -194,41 +220,44 @@
 \email{greg.schwarz@aas.org, gus.muench@aas.org}
 
 \author[0000-0002-0786-7307]{Greg J. Schwarz}
-\affil{American Astronomical Society \\
-2000 Florida Ave., NW, Suite 300 \\
-Washington, DC 20009-1231, USA}
+\affiliation{American Astronomical Society \\
+1667 K Street NW, Suite 800 \\
+Washington, DC 20006, USA}
 
 \author{August Muench}
 \affiliation{American Astronomical Society \\
-2000 Florida Ave., NW, Suite 300 \\
-Washington, DC 20009-1231, USA}
-\collaboration{(AAS Journals Data Scientists collaboration)}
+1667 K Street NW, Suite 800 \\
+Washington, DC 20006, USA}
+
+\collaboration{1}{(AAS Journals Data Scientists collaboration)}
 
 \author{Butler Burton}
-\affiliation{National Radio Astronomy Observatory}
+\affiliation{Leiden University}
 \affiliation{AAS Journals Associate Editor-in-Chief}
-\nocollaboration
+\nocollaboration{1}
 
 \author{Amy Hendrickson}
-\altaffiliation{Creator of AASTeX v6.2}
+\altaffiliation{AASTeX v6+ programmer}
 \affiliation{TeXnology Inc.}
-\collaboration{(LaTeX collaboration)}
+
+\collaboration{1}{(LaTeX collaboration)}
 
 \author{Julie Steffen}
 \affiliation{AAS Director of Publishing}
 \affiliation{American Astronomical Society \\
-2000 Florida Ave., NW, Suite 300 \\
-Washington, DC 20009-1231, USA}
+1667 K Street NW, Suite 800 \\
+Washington, DC 20006, USA}
 
-\author{Jeff Lewandowski}
-\affiliation{IOP Senior Publisher for the AAS Journals}
+\author{Scott Chernoff}
 \affiliation{IOP Publishing, Washington, DC 20005}
+
+\nocollaboration{2}
 
 %% Note that the \and command from previous versions of AASTeX is now
 %% depreciated in this version as it is no longer necessary. AASTeX 
 %% automatically takes care of all commas and "and"s between authors names.
 
-%% AASTeX 6.2 has the new \collaboration and \nocollaboration commands to
+%% AASTeX 6.3 has the new \collaboration and \nocollaboration commands to
 %% provide the collaboration status of a group of authors. These commands 
 %% can be used either before or after the list of corresponding authors. The
 %% argument for \collaboration is the collaboration identifier. Authors are
@@ -242,7 +271,7 @@ Washington, DC 20009-1231, USA}
 This example manuscript is intended to serve as a tutorial and template for
 authors to use when writing their own AAS Journal articles. The manuscript
 includes a history of \aastex\ and documents the new features in the
-previous versions as well as the new features in version 6.2. This
+previous versions as well as the new features in version 6.3. This
 manuscript includes many figure and table examples to illustrate these new
 features.  Information on features not explicitly mentioned in the article
 can be viewed in the manuscript comments or more extensive online
@@ -254,7 +283,7 @@ Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all
 have a 250 word limit for the abstract\footnote{Note that manuscripts 
 submitted to the new Research Notes of the American Astronomical Society 
 (RNAAS) do \textbf{not} have abstracts.}.  If you exceed this length the
-Editorial office will ask you to shorten it.
+Editorial office will ask you to shorten it. This abstract has 180 words.
 
 \end{abstract}
 
@@ -317,7 +346,7 @@ out hard copies.
 Even though author publication charges are no longer based on print pages
 \footnote{see Section \ref{sec:pubcharge} in the Appendix for more details
 about how current article costs are calculated.} the emulateapj class file
-has proven to be extremely popular with AAS Journal authors.  An informal
+has proven to be extremely popular with AAS Journal authors.  An 
 analysis of submitted \latex\ manuscripts in 2015 revealed that $\sim$65\%
 either called emulateapj or have a commented emulateapj classfile call
 indicating it was used at some stage of the manuscript construction.
@@ -328,57 +357,60 @@ When planning the next \aastex\ release the popularity of emulateapj played
 an important roll in the decision to drop the old base code and adopt and
 modify emulateapj for \aastex\ v6.+ instead.  The change brings \aastex\
 inline with what the majority of authors are already using while still
-delivering new and improved features.  \aastex\ v6.0 through v6.2 were written
-by Amy Hendrickson and released in January 2016 (v6.0), October 2016 (v6.1),
-and January 2018 (v6.2), respectively.  Some of the new features in v6.0 
-included:
+delivering new and improved features.  \aastex\ v6.0 through v6.3 were
+written by Amy Hendrickson. The release dates were January 2016 (v6.0),
+October 2016 (v6.1), January 2018 (v6.2), and June 2019 (v6.3),
+respectively.
 
-\begin{enumerate}
-\item improved citations for third party data repositories and software,
-\item easier construction of matrix figures consisting of multiple 
+The new features in the recent releases includes:
+
+\begin{itemize}
+ \item{v6.0}
+   \begin{enumerate}
+      \item line numbering and watermarking,
+      \item improved citations for third party data repositories and software,
+      \item easier construction of matrix figures consisting of multiple 
 encapsulated postscript (EPS) or portable document format (PDF) files,
-\item figure set mark up for large collections of similar figures,
-\item color mark up to easily enable/disable revised text highlighting,
-\item improved url support, and
-\item numerous table options such as the ability to hide columns, column 
-decimal alignment, automatic column math mode and numbering, plus splitting of
-wide tables.
-\end{enumerate}
-
-The features in v6.1 were:
-
-\begin{enumerate}
-\item ORCID support for preprints,
-\item improved author, affiliation and collaboration mark up,
-\item reintroduced the old AASTeX v5.2 {\tt\string\received}, 
-      {\tt\string\revised}, {\tt\string\accepted}, and
-      {\tt\string\published} commands plus
-      added the new {\tt\string\submitjournal} command to document
-      which AAS Journal the manuscript was submitted to, plus
-\item new typeset style options.
-\end{enumerate}
-
-The new features in v6.2 are:
-
-\begin{enumerate}
-\item A new RNAAS style option for Research Note manuscripts,
-\item Titles no longer put in all caps,
-\item No page skip between the title page and article body,
-\item re-introduce RevTeX's widetext environment for long lines in
-      two column style formats, and
-\item upgrade to the {\tt\string\doi} command.
-\end{enumerate}
+      \item figure set mark up for large collections of similar figures,
+      \item color mark up to easily enable/disable revised text highlighting,
+      \item improved url support, and
+      \item numerous table options such as the ability to hide columns, column decimal alignment, automatic column math mode and numbering, plus splitting of wide tables (see Section \ref{subsec:tables} for details).
+    \end{enumerate}
+  \item{v6.1}
+    \begin{enumerate}
+      \item ORCID support for preprints,
+      \item improved author, affiliation and collaboration mark up,
+      \item reintroduced the old AASTeX v5.2 {\tt\string\received}, {\tt\string\revised}, {\tt\string\accepted}, and {\tt\string\published} commands plus added the new {\tt\string\submitjournal} command to document which AAS Journal the manuscript was submitted to, plus
+      \item new typeset style options including {\tt\string modern}.
+    \end{enumerate}
+  \item{v6.2}
+    \begin{enumerate}
+      \item A new RNAAS style option for Research Note manuscripts,
+      \item Titles no longer put in all caps,
+      \item No page skip between the title page and article body,
+      \item re-introduce RevTeX's widetext environment for long lines in two column style formats, and
+      \item upgrade to the {\tt\string\doi} command.
+    \end{enumerate}
+  \item{v6.3}
+    \begin{enumerate}
+      \item New {\tt\string interactive} environment to highlight interactive figures (see Section \ref{animation}),
+      \item Improved collaboration commands, 
+      \item New {\tt\string anonymous} style to keep the authors, affiliations and acknowledgments from showing in the compiled pdf for dual anonymous review, and
+      \item Adoptions of IAU approved syntax for nominal units, see Section \ref{nominal}.
+    \end{enumerate}
+\end{itemize}
 
 The rest of this article provides information and examples on how to create
-your own AAS Journal manuscript with v6.2.  Special emphasis is placed on
+your own AAS Journal manuscript with v6.3.  Special emphasis is placed on
 how to use the full potential of \aastex\ v6+.  The next section describes
 the different manuscript styles available and how they differ from past
-releases.  Section \ref{sec:floats} describes how tables and figures are
-placed in a \latex\ document. Specific examples of tables, Section
+releases.  Section \ref{sec:floats} describes table and figure placement. 
+Specific examples of tables, Section
 \ref{subsec:tables}, and figures, Section \ref{subsec:figures}, are also
-provided.  Section \ref{sec:displaymath} discusses how to display math and
+provided. A special emphasis is placed on interactive figures.
+Section \ref{sec:displaymath} discusses how to display math and
 incorporate equations in a manuscript while Section \ref{sec:highlight}
-discuss how to use the new revision mark up.  The last section,
+discuss how to use different ways to highlight revisions.  The last section,
 \ref{sec:cite}, shows how recognize software and external data as first
 class references in the manuscript bibliography.  An appendix is included
 to show how to construct one and provide some information on how article
@@ -388,7 +420,7 @@ in the comments of this \latex\ file and in the online documentation at
 
 \section{Manuscript styles} \label{sec:style}
 
-The default style in \aastex\ v6.2 is a tight single column style, e.g.  10
+The default style in \aastex\ v6.3 is a tight single column style, e.g.  10
 point font, single spaced.  The single column style is very useful for
 article with wide equations. It is also the easiest to style to work with
 since figures and tables, see Section \ref{sec:floats}, will span the
@@ -397,7 +429,7 @@ entire page, reducing the need for address float sizing.
 To invoke a two column style similar to the what is produced in
 the published PDF copy use \\
 
-\noindent {\tt\string\documentclass[twocolumn]\{aastex62\}}. \\
+\noindent {\tt\string\documentclass[twocolumn]\{aastex63\}}. \\
 
 \noindent Note that in the two column style figures and tables will only
 span one column unless specifically ordered across both with the ``*'' flag,
@@ -424,8 +456,15 @@ output that has wider left and right margins. It is designed to have fewer
 words per line to improve reader retention. It also looks better on devices
 with smaller displays such as smart phones.
 
-For a Research Note use the {\tt\string RNAAS} option which will produce a
+For a Research Note use the {\tt\string RNAAS} option. This will produce a
 manuscript with no abstract and in the {\tt\string modern} style.
+
+The {\tt\string anonymous} option will prevent the author and affiliations
+from being shown in the compiled pdf copy. This option allows the author 
+to keep this critical information in the latex file but prevent the reviewer
+from seeing it during peer review if dual anonymous review is requested. 
+Likewise, acknowledgments can also be hidden if placed after the 
+{\tt\string\acknowledgments} command.
 
 \section{Floats} \label{sec:floats}
 
@@ -452,52 +491,11 @@ production.
 Note that authors of Research Notes are only allowed one float, either one
 table or one figure.
 
-\startlongtable
-\begin{deluxetable}{c|cc}
-\tablecaption{ApJ costs from 1991 to 2013\tablenotemark{a} \label{tab:table}}
-\tablehead{
-\colhead{Year} & \colhead{Subscription} & \colhead{Publication} \\
-\colhead{} & \colhead{cost} & \colhead{charges\tablenotemark{b}}\\
-\colhead{} & \colhead{(\$)} & \colhead{(\$/page)}
-}
-\colnumbers
-\startdata
-1991 & 600 & 100 \\
-1992 & 650 & 105 \\
-1993 & 550 & 103 \\
-1994 & 450 & 110 \\
-1995 & 410 & 112 \\
-1996 & 400 & 114 \\
-1997 & 525 & 115 \\
-1998 & 590 & 116 \\
-1999 & 575 & 115 \\
-2000 & 450 & 103 \\
-2001 & 490 &  90 \\
-2002 & 500 &  88 \\
-2003 & 450 &  90 \\
-2004 & 460 &  88 \\
-2005 & 440 &  79 \\
-2006 & 350 &  77 \\
-2007 & 325 &  70 \\
-2008 & 320 &  65 \\
-2009 & 190 &  68 \\
-2010 & 280 &  70 \\
-2011 & 275 &  68 \\
-2012 & 150 &  56 \\
-2013 & 140 &  55 \\
-\enddata
-\tablenotetext{a}{Adjusted for inflation}
-\tablenotetext{b}{Accounts for the change from page charges to digital quanta in April, 2011}
-\tablecomments{Note that {\tt \string \colnumbers} does not work with the 
-vertical line alignment token. If you want vertical lines in the headers you
-can not use this command at this time.}
-\end{deluxetable}
-
 For authors that do want to take the time to optimize the locations of
 their floats there are some techniques that can be used.  The simplest
 solution is to placing a float earlier in the text to get the position
-right but this option will break down if the manuscript is altered, see
-Table \ref{tab:table}.  A better method is to force \latex\ to place a
+right but this option will break down if the manuscript is altered.
+A better method is to force \latex\ to place a
 float in a general area with the use of the optional {\tt\string [placement
 specifier]} parameter for figures and tables. This parameter goes after
 {\tt\string \begin\{figure\}}, {\tt\string \begin\{table\}}, and
@@ -518,41 +516,11 @@ when a {\tt\string tabular} is surrounded by {\tt\string\begin\{table\}} ...
 {\tt\string\end\{table\}} is it a true float and the rules and suggestions
 above apply.
 
-In AASTeX v6.2 all deluxetables are float tables and thus if they are
+In AASTeX v6.3 all deluxetables are float tables and thus if they are
 longer than a page will spill off the bottom. Long deluxetables should
 begin with the {\tt\string\startlongtable} command. This initiates a
 longtable environment.  Authors might have to use {\tt\string\clearpage} to
 isolate a long table or optimally place it within the surrounding text.
-
-\begin{deluxetable*}{ccCrlc}[b!]
-\tablecaption{Column math mode in an observation log \label{tab:mathmode}}
-\tablecolumns{6}
-\tablenum{2}
-\tablewidth{0pt}
-\tablehead{
-\colhead{UT start time\tablenotemark{a}} &
-\colhead{MJD start time\tablenotemark{a}} &
-\colhead{Seeing} & \colhead{Filter} & \colhead{Inst.} \\
-\colhead{(YYYY-mm-dd)} & \colhead{(d)} &
-\colhead{(arcsec)} & \colhead{} & \colhead{}
-}
-\startdata
-2012-03-26 & 56012.997 & \sim 0.\arcsec5 & H$\alpha$ & NOT \\
-2012-03-27 & 56013.944 & 1.\arcsec5 & grism & SMARTS \\
-2012-03-28 & 56014.984 & \nodata & F814M & HST \\
-2012-03-30 & 56016.978 & 1.\arcsec5\pm0.25 & B\&C & Bok \\
-\enddata
-\tablenotetext{a}{At exposure start.}
-\tablecomments{The ``C'' command column identifier in the 3 column turns on
-math mode for that specific column. One could do the same for the next
-column so that dollar signs would not be needed for H$\alpha$
-but then all the other text would also be in math mode and thus typeset
-in Latin Modern math and you will need to put it back to Roman by hand.
-Note that if you do change this column to math mode the dollar signs already
-present will not cause a problem. Table \ref{tab:mathmode} is published 
-in its entirety in the machine readable format.  A portion is
-shown here for guidance regarding its form and content.}
-\end{deluxetable*}
 
 \subsection{Tables} \label{subsec:tables}
 
@@ -561,21 +529,19 @@ Tables can be constructed with \latex's standard table environment or the
 tables better but has a larger overhead due to the greater amount of
 defined mark up used set up and manipulate the table structure.  The choice
 of which to use is up to the author.  Examples of both environments are
-used in this manuscript. Table \ref{tab:table} is a simple deluxetable
-example that gives the approximate changes in the subscription costs and
-author publication charges from 1991 to 2013.
+used in this manuscript. 
 
 Tables longer than 200 data lines and complex tables should only have a
 short example table with the full data set available in the machine
 readable format.  The machine readable table will be available in the HTML
 version of the article with just a short example in the PDF. Authors are
-required to indicate to the reader where the data can be obtained in the
-table comments.  Suggested text is given in the comments of Table
-\ref{tab:mathmode}.  Authors are encouraged to create their own machine
+required to indicate in the table comments that the data in machine 
+readable format in the full article.
+Authors are encouraged to create their own machine
 readable tables using the online tool at
 \url{http://authortools.aas.org/MRT/upload.html}.
 
-\aastex\ v6 introduces five new table features that are designed to make
+\aastex\ v6 introduced five new table features that were designed to make
 table construction easier and the resulting display better for AAS Journal
 authors.  The items are:
 
@@ -587,10 +553,9 @@ authors.  The items are:
 \item Splitting wide tables into two or three parts.
 \end{enumerate}
 
-Each of these new features are illustrated in following Table examples.
-All five features work with the regular \latex\ tabular environment and in
-\aastex's deluxetable environment.  The examples in this manuscript also
-show where the two process differ.
+Full details on how to create each type are given in the following 
+sections. Additional details are available in the AASTeX
+guidelines at \url{http://journals.aas.org/authors/aastex.html}
 
 \subsubsection{Column math mode}
 
@@ -600,8 +565,7 @@ define the alignment and number of columns.  The most common values are
 \underline{r}ight justification.  If these values are capitalized, e.g.
 ``C'', ``L'', or ``R'', then that specific column will automatically be in math
 mode meaning that \$s are not required.  Note that having embedded dollar
-signs in the table does not affect the output.  The third and forth columns
-of Table \ref{tab:mathmode} shows how this math mode works.
+signs in the table does not affect the output. 
 
 \subsubsection{Decimal alignment}
 
@@ -628,38 +592,7 @@ done with a multicolumn call, e.g {\tt\string\multicolumn2c\{\}} or
 {\tt\string\twocolhead\{\}} command in deluxetable.  Since \latex\ is
 splitting these columns into two it is important to get the table width
 right so that they appear joined on the page.  You may have to run the
-\latex\ compiler twice to get it right.  Table \ref{tab:decimal}
-illustrates how decimal alignment works in the tabular environment with a
-$\pm$ symbol embedded between the last two columns.
-
-%% Note that the \setcounter and \renewcommand are needed here because
-%% this example is using a mix of deluxetable and tabular.  Here the
-%% deluxetable counters are set with \tablenum but the situation is a bit
-%% more complex for tabular.  Use the first command to set the Table number
-%% to ONE LESS than it should be.  The next command will auto increment it
-%% to the desired number.
-\setcounter{table}{2}
-\begin{table}[h!]
-\renewcommand{\thetable}{\arabic{table}}
-\centering
-\caption{Decimal alignment made easy} \label{tab:decimal}
-\begin{tabular}{cD@{$\pm$}D}
-\tablewidth{0pt}
-\hline
-\hline
-Column & \multicolumn2c{Value} & \multicolumn2c{Uncertainty}\\
-\hline
-\decimals
-A & 1234     & 100.0     \\
-B &  123.4   &  10.1     \\
-C &  12.34   &   1.01    \\
-D &   1.234  &   0.101   \\
-E &    .1234 &   0.01001 \\
-F &   1.0    &    .      \\
-\hline
-\multicolumn{5}{c}{NOTE. - Two decimal aligned columns}
-\end{tabular}
-\end{table}
+\latex\ compiler twice to get it right.  
 
 \subsubsection{Automatic column header numbering} \label{subsubsec:autonumber}
 
@@ -671,13 +604,11 @@ at the location where the author wants the numbers to appear, e.g. after
 the last line of specified table header rows. In deluxetable this command
 has to come before {\tt\string\startdata}.  {\tt\string\colnumbers} will
 not increment for columns hidden by the ``h'' command, see Section
-\ref{subsubsec:hide}.  Table \ref{tab:table} uses this command to
-automatically generate column index numbers.
+\ref{subsubsec:hide}. 
 
 Note that when using decimal alignment in a table the command 
 {\tt\string\decimalcolnumbers} must be used instead of 
-{\tt\string\colnumbers} and {\tt\string\decimals}. Table \ref{tab:messier}
-illustrates this specific functionality.
+{\tt\string\colnumbers} and {\tt\string\decimals}. 
 
 \subsubsection{Hiding columns} \label{subsubsec:hide}
 
@@ -712,7 +643,7 @@ uses {\tt\string\tablenum} to renumber the table because a \latex\ tabular
 table was inserted before it.
 
 \begin{deluxetable*}{cchlDlc}
-\tablenum{4}
+\tablenum{1}
 \tablecaption{Fun facts about the first 10 messier objects\label{tab:messier}}
 \tablewidth{0pt}
 \tablehead{
@@ -749,25 +680,20 @@ However, there are some artificial limitations based on the width of a
 print page.  The old way around this limitation was to rotate into 
 landscape mode and use the smallest available table font
 sizes, e.g. {\tt\string\tablewidth}, to get the table to fit.
-Unfortunately, this was not alway enough but now along with the hide column
+Unfortunately, this was not always enough but now along with the hide column
 option outlined in Section \ref{subsubsec:hide} there is a new way to break
 a table into two or three components so that it flows down a page by
 invoking a new table type, splittabular or splitdeluxetable. Within these
 tables a new ``B'' column separator is introduced.  Much like the vertical
-bar option, ``$\vert$'', that produces a vertical table lines, e.g. Table
-\ref{tab:table}, the new ``B'' separator indicates where to \underline{B}reak
+bar option, ``$\vert$'', that produces a vertical table lines 
+the new ``B'' separator indicates where to \underline{B}reak
 a table.  Up to two ``B''s may be included.
 
-Table 5 % \ref{tab:deluxesplit} this freaks it out when it is used!
+Table 2 % \ref{tab:deluxesplit} this freaks it out when it is used!
 shows how to split a wide deluxetable into three parts with
 the {\tt\string\splitdeluxetable} command.  The {\tt\string\colnumbers}
 option is on to show how the automatic column numbering carries through the
 second table component, see Section \ref{subsubsec:autonumber}.
-
-The last example, Table \ref{tab:tablesplit}, shows how to split the same
-table but with a regular \latex\ tabular call and into two parts. Decimal
-alignment is included in the third column and the ``Component'' column is
-hidden to illustrate the new features working together.
 
 \begin{splitdeluxetable*}{lccccBcccccBcccc}
 \tabletypesize{\scriptsize}
@@ -806,75 +732,40 @@ indicators in the column identifier preamble.  For more information please
 look at the new \aastex\ instructions.}
 \end{splitdeluxetable*}
 
-%\clearpage
-
-\setcounter{table}{5}
-\begin{table*}[h!]
-\renewcommand{\thetable}{\arabic{table}}
-\caption{Measurements of Emission Lines: one break\label{tab:tablesplit}}
-\begin{splittabular}{lhDccccBccccccc}
-%\multicolumn{5}{c}{Table 6} \\
-%\multicolumn{5}{c}{Measurements of Emission Lines} \\
-\hline 
-\hline 
-Model & Component & \multicolumn2c{Shift} & FWHM & 
-\multicolumn{10}{c}{Flux} \\
- & & \multicolumn2c{($\rm km~s^{-1}$)} & {($\rm km~s^{-1}$)} & 
-\multicolumn{10}{c}{($\rm 10^{-17}~erg~s^{-1}~cm^{-2}$)} \\
-\cline{5-15}
- & & & & & {Ly$\alpha$} & {N\,{\footnotesize V}} & 
-{Si\,{\footnotesize IV}} & {C\,{\footnotesize IV}} &
-{Mg\,{\footnotesize II}} & {H$\gamma$} & {H$\beta$}
-& {H$\alpha$} & {He\,{\footnotesize I}} & {Pa$\gamma$} \\
-%\hline
-\decimalcolnumbers
- & BELs& -97.13 &    9117$\pm      38$&    1033$\pm      33$&$< 35$&$<     166$&     637$\pm      31$&    1951$\pm      26$&     991$\pm 30$&    3502$\pm      42$&   20285$\pm      80$&    2025$\pm     116$& 1289$\pm     107$\\
-Model 1 & IELs& -4049.123 & 1974$\pm      22$&    2495$\pm      30$&$<     42$&$<     109$&     995$\pm 186$&      83$\pm      30$&      75$\pm      23$&     130$\pm      25$& 357$\pm      94$&     194$\pm      64$& 36$\pm      23$\\
- & NELs& . &     641$\pm       4$&     449$\pm 23$&$<      6$&$<       9$&       --            &     275$\pm      18$& 150$\pm      11$&     313$\pm      12$&     958$\pm      43$&     318$\pm 34$& 151$\pm       17$\\
-\hline
- & BELs& -85 &    8991$\pm      41$& 988$\pm      29$&$<     24$&$<     173$&     623$\pm      28$&    1945$\pm 29$&     989$\pm      27$&    3498$\pm      37$&   20288$\pm      73$& 2047$\pm     143$& 1376$\pm     167$\\
-Model 2 & IELs& -51000 &    2025$\pm      26$& 2494$\pm      32$&$<     37$&$<     124$&    1005$\pm     190$&      72$\pm 28$&      72$\pm      21$&     113$\pm      18$&     271$\pm      85$& 205$\pm      72$& 34$\pm      21$\\
- & NELs& 52 &     637$\pm      10$&     477$\pm 17$&$<      4$&$<       8$&       --            &     278$\pm      17$& 153$\pm      10$&     317$\pm      15$&     969$\pm      40$&     325$\pm 37$& 147$\pm       22$\\
-\hline
-\end{splittabular}
-\end{table*}
-
 \subsection{Figures\label{subsec:figures}}
 
 %% The "ht!" tells LaTeX to put the figure "here" first, at the "top" next
 %% and to override the normal way of calculating a float position
 \begin{figure}[ht!]
-\plotone{cost-eps-converted-to.pdf}
-\caption{The subscription and author publication costs from 1991 to 2013.
-The data comes from Table \ref{tab:table}.\label{fig:general}}
+\plotone{cost.pdf}
+\caption{The subscription (squares) and author publication (asterisks) 
+costs from 1991 to 2013. Subscription cost are on the left Y axis while
+the author costs are on the right Y axis. All numbers in US dollars and
+adjusted for inflation. The author charges also account for the change
+from page charges to digital quanta in April 2011.  \label{fig:general}}
 \end{figure}
 
 Authors can include a wide number of different graphics with their articles
-in  encapsulated postscript (EPS) or portable document format (PDF).  These
-range from general figures all authors are familiar with to new enhanced
-graphics that can only be fully experienced in HTML.  The later include
-animations, figure sets and interactive figures.  This portion of the
-article provides examples for setting up all these graphics in with the
-latest version of \aastex.
+but encapsulated postscript (EPS) or portable document format (PDF) are
+encouraged. These range from general figures all authors are familiar with
+to new enhanced graphics that can only be fully experienced in HTML.  The
+later include figure sets, animations and interactive figures.  All
+enhanced graphics require a static two dimensional representation in the
+manuscript to serve as the example for the reader. All figures should
+include detailed and descriptive captions.  These captions are absolutely
+critical for readers for whom the enhanced figure is inaccessible either
+due to a disability or offline access.  This portion of the article
+provides examples for setting up all these types in with the latest version
+of \aastex.
 
 \subsection{General figures\label{subsec:general}}
 
-\aastex\ has a {\tt\string\plotone} command to display a figure
-consisting of one EPS/PDF file.  Figure \ref{fig:general} is an example
-which uses the data from Table \ref{tab:table}. For a general figure
+\aastex\ has a {\tt\string\plotone} command to display a figure consisting
+of one EPS/PDF file.  Figure \ref{fig:general} is an example which shows
+the approximate changes in the subscription costs and author publication
+charges from 1991 to 2013 in the AAS Journals.  For a general figure
 consisting of two EPS/PDF files the {\tt\string\plottwo} command can be
-used to position the two image files side by side.  Figure \ref{fig:f2}
-shows the Swift/XRT X-ray light curves of two recurrent novae.  The data
-from Figures \ref{fig:f2} through \ref{fig:fig4} are taken from Table 2 of
-\citet{2011ApJS..197...31S}. 
-
-\begin{figure}
-\plottwo{RS_Oph-eps-converted-to.pdf}{U_Sco-eps-converted-to.pdf}
-\caption{Swift/XRT X-ray light curves of RS Oph and U Sco which represent
-the two canonical recurrent types, a long period system with a red giant
-secondary and a short period system with a dwarf/sub-dwarf secondary,
-respectively.\label{fig:f2}}
-\end{figure}
+used to position the two image files side by side.
 
 Both {\tt\string\plotone} and {\tt\string\plottwo} take a
 {\tt\string\caption} and an optional {\tt\string\figurenum} command to
@@ -891,7 +782,7 @@ found at \break
 
 \subsection{Grid figures}
 
-Including more than two EPS/PDF files in a single figure call can be tricky
+Including more than two EPS/PDF files in a single figure call can be tricky to
 easily format.  To make the process easier for authors \aastex\ v6 offers
 {\tt\string\gridline} which allows any number of individual EPS/PDF file
 calls within a single figure.  Each file cited in a {\tt\string\gridline}
@@ -916,28 +807,48 @@ figure constructed with six individual EPS files using the
 {\tt\string\gridline} option.
 
 \begin{figure*}
-\gridline{\fig{V2491_Cyg-eps-converted-to.pdf}{0.3\textwidth}{(a)}
-          \fig{CSS081007-eps-converted-to.pdf}{0.3\textwidth}{(b)}
-          \fig{LMC_2009-eps-converted-to.pdf}{0.3\textwidth}{(c)}
+\gridline{\fig{V2491_Cyg.pdf}{0.3\textwidth}{(a)}
+          \fig{HV_Cet.pdf}{0.3\textwidth}{(b)}
+          \fig{LMC_2009.pdf}{0.3\textwidth}{(c)}
           }
-\gridline{\fig{RS_Oph-eps-converted-to.pdf}{0.3\textwidth}{(d)}
-          \fig{U_Sco-eps-converted-to.pdf}{0.3\textwidth}{(e)}
+\gridline{\fig{RS_Oph.pdf}{0.3\textwidth}{(d)}
+          \fig{U_Sco.pdf}{0.3\textwidth}{(e)}
           }
-\gridline{\fig{KT_Eri-eps-converted-to.pdf}{0.3\textwidth}{(f)}}
+\gridline{\fig{KT_Eri.pdf}{0.3\textwidth}{(f)}}
 \caption{Inverted pyramid figure of six individual files. The nova are
-(a) V2491 Cyg, (b) HV Cet, (c) LMC 2009, (d) RS Oph, (e) U Sco, and
-(f) KT Eri.\label{fig:pyramid}}
+(a) V2491 Cyg, (b) HV Cet, (c) LMC 2009, (d) RS Oph, (e) U Sco, and (f) 
+KT Eri. These individual figures are taken from \citet{2011ApJS..197...31S}.
+\label{fig:pyramid}}
 \end{figure*}
 
-\subsection{Figure sets}
+\subsection{Enhanced graphics}
 
-A large collection of similar style figures should be grouped together as a
-figure set.  The derived PDF article will only shows an example figure
-while the enhanced content is available in the figure set in the electronic
-edition.  The advantage of a figure set gives the reader the ability to
-easily sort through the figure collection to find individual component
-figures.  All of the figure set components, along with their html framework,
-are also available for download in a .tar.gz package.
+Enhanced graphics have an example figure to serve as an example for the
+reader and the full graphical item available in the published HTML article.
+This includes Figure sets, animations, and interactive figures. The 
+Astronomy Image Explorer (\url{http://www.astroexplorer.org/}) provides 
+access to all the figures published in the AAS Journals since they offered
+an electronic version which was in the mid 1990s. You can filter image
+searches by specific terms, year, journal, or type. The type filter is 
+particularly useful for finding all published enhanced graphics. As of
+June 2019 there are over 3000 videos, 1000 figure sets, and 65 interactive
+figures. The next sections describe how to include these types of graphics
+in your own manuscripts.
+
+\subsubsection{Figure sets}
+
+The grid commands given above works great for a limited set of individual
+figure files but what do you do if you have many 10s or 100s or even 1000s of
+individual figure files? Figure sets represents a virtual flip book of a
+large group of similar style figures.  The derived PDF article will only
+shows an example figure while the enhanced content is available in the
+figure set in the HTML edition.  The advantage of a figure set gives the
+reader the ability to easily sort through a large collection to find
+individual component figures.  The advantage to the author is that grouping
+similar figures into a figure set can result in significant cost savings in
+terms of reduced publication charges, see Appendix B. All of the figure set
+components, along with their html framework, are also available to the reader
+for download in a single .tar.gz package.
 
 Special \latex\ mark up is required to create a figure set.  Prior to
 \aastex\ v6 the underlying mark up commands had to be inserted by hand
@@ -952,110 +863,159 @@ Set caption will appear in the resulting PDF.
 \figsetgrpstart
 \figsetgrpnum{1.1}
 \figsetgrptitle{KT Eri}
-\figsetplot{KT_Eri-eps-converted-to.pdf}
+\figsetplot{KT_Eri.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of KT Eri.}
 \figsetgrpend
 
 \figsetgrpstart
 \figsetgrpnum{1.2}
 \figsetgrptitle{RS Oph}
-\figsetplot{RS_Oph-eps-converted-to.pdf}
+\figsetplot{RS_Oph.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of RS Oph.}
 \figsetgrpend
 
 \figsetgrpstart
 \figsetgrpnum{1.3}
 \figsetgrptitle{U Sco}
-\figsetplot{U_Sco-eps-converted-to.pdf}
+\figsetplot{U_Sco.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of U Sco.}
 \figsetgrpend
 
 \figsetgrpstart
 \figsetgrpnum{1.4}
 \figsetgrptitle{V2491 Cyg}
-\figsetplot{V2491_Cyg-eps-converted-to.pdf}
+\figsetplot{V2491_Cyg.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of V2491 Cyg.}
 \figsetgrpend
 
 \figsetgrpstart
 \figsetgrpnum{1.5}
 \figsetgrptitle{Nova LMC 2009}
-\figsetplot{LMC_2009-eps-converted-to.pdf}
+\figsetplot{LMC_2009.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of nova LMC 2009.}
 \figsetgrpend
 
 \figsetgrpstart
 \figsetgrpnum{1.6}
 \figsetgrptitle{HV Cet}
-\figsetplot{CSS081007-eps-converted-to.pdf}
+\figsetplot{HV_Cet.pdf}
 \figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
-\figsetgrpend
-
-\figsetgrpstart
-\figsetgrpnum{1.7}
-\figsetgrptitle{V2672 Oph}
-\figsetplot{V2672_Oph-eps-converted-to.pdf}
-\figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
-\figsetgrpend
-
-\figsetgrpstart
-\figsetgrpnum{1.8}
-\figsetgrptitle{V407 Cyg}
-\figsetplot{V407_Cyg-eps-converted-to.pdf}
-\figsetgrpnote{The Swift/XRT X-ray light curve for the first year after
-outburst.}
+outburst of HV Cet.}
 \figsetgrpend
 
 \figsetend
 
 \begin{figure}
-\plotone{KT_Eri-eps-converted-to.pdf}
+\plotone{KT_Eri.pdf}
 \caption{The Swift/XRT X-ray light curve for the first year after
 outburst of the suspected recurrent nova KT Eri. At a maximum count rate of 
 328 ct/s, KT Eri was the brightest nova in X-rays observed to date. All 
-the component figures are available in the Figure Set. \label{fig:fig4}}
+the component figures (6) are available in the Figure Set. Note that
+these components that are {\bf not} shown in the compiled pdf. The figure
+set consists of the same figures as shown in Figure \ref{fig:pyramid}. 
+The example figure shown for figure sets can be one component or many. 
+\label{fig:fig4}}
 \end{figure}
 
 Authors are encouraged to use an online tool at
 \url{http://authortools.aas.org/FIGSETS/make-figset.html} to generate their
 own specific figure set mark up to incorporate into their \latex\ articles.
 
-\subsection{Animations}
+\subsubsection{Animations \label{animation}}
 
-Authors may include animations in their articles.  A single still frame from 
-the animation should be included as a regular figure to serve as an example.
-The associated figure caption should indicate to the reader exactly what the
-animation shows and that the animation is available online.
+Authors may, and are in fact encouraged, to include animations in their
+manuscripts. The video will stream inline with the published article and
+also be available for download.  When writing the manuscript, a stand alone
+figure is necessary to serve as an example for the reader.  Ideally, this
+is a single still frame from the animation but in some case the animation
+may only represent a small portion of the example figure, say one many
+panels as shown in Figure \ref{fig:video}. Regardless, it is very
+important that the author provide descriptive text in the figure caption
+including start and stop times and the video duration. Authors should
+review the AAS animation guidelines in the graphics guide at
+\url{https://journals.aas.org/graphics-guide/#animations}.
 
 \begin{figure}
-\plotone{video3-eps-converted-to.pdf}
-\caption{Example image from the animation which is available in the electronic
-edition.}
+\begin{interactive}{animation}{movie.mp4}
+\plotone{f4.pdf}
+\end{interactive}
+\caption{Figure 1 from \citet{2018ApJ...868L..33L}. AIA 171\AA (a,b), 
+AIA 131\AA (c), and AIA 304\AA images are shown. The red rectangle 
+in (a) shows the field of view of the other panels. An animation of 
+panels (b-d) is available. It covers 8 hours of observing beginning 
+at 01:00 UT on 2012 January 19. The video duration is 20 seconds. 
+\label{fig:video}}
 \end{figure}
 
-\subsection{Interactive figures}
+Animations and interactive figures (Section \ref{sec:interactive}) should 
+use the {\tt\string\begin{interactive}} environment in the figure call. This 
+environment
+places a blue border around the figure to indicate that the figure is 
+enhanced in the published HTML article. The
+command also serves to alert the publisher what files are used to generate
+the dynamic HTML content. {\tt\string\interactive} takes two arguments. The
+first details the type and currently only three are allowed. The types are
+{\tt\string js} for generic javascript interactive figures, 
+{\tt\string animation} for inline videos, and 
+{\tt\string timeseries} for interactive light curves produced
+by astropy \citet{2013A&A...558A..33A}\footnote{To be release in the 
+summer of 2019}. If these types are not provide the compiler will issue an
+error and quit. The second argument is the file that produces the enhanced
+feature in the HTML article.
+
+\subsubsection{Interactive figures \label{sec:interactive}}
 
 Interactive figures give the reader the ability to manipulate the
 information contained in an image which can add clarity or help further the
-author's narrative.  These figures consist of two parts, the figure file in
-a specific format and a javascript and html frame work that provides the
-interactive control.  An example of an interactive figure is a 3D model.
+author's narrative.  These figures consist of two parts, a static 
+representative figure for the manuscript and the dynamic javascript plus
+HTML framework that allows for interactive control.
+
+An example of an interactive figure is a 3D model.
 The underlying figure is a X3D file while x3dom.js is the javascript driver
 that displays it. An author created interface is added via a html wrapper.
 The first 3D model published by the AAS Journals using this technique was
-\citet{2014ApJ...793..127V}.  Authors should consult the online tutorials
-for more information on how to construct their own interactive figures.
+\citet{2014ApJ...793..127V}.  
 
-As with animations authors should include a non-interactive regular figure
-to use as an example.  The example figure should also indicate to the reader
-that the enhanced figure is interactive and can be accessed online.
+Figure \ref{fig:interactive} provides an interactive example which can be
+run locally to demonstrate how a simple javascript plus html interface
+allows a reader to switch between figures. The necessary files for this
+particular interactive figure are in the {\tt\string interactive.tar.gz}
+file included with this package. Unpack the file and point the browser to
+the local html file. In this case, the javascript that runs the interactive
+buttons is embedded in the html file but it could just as easily be calls
+to external javascript libraries. Ideally, the javascript should be
+included with the submitted package of interactive files to minimize
+external dependencies within the published article.
+
+\begin{figure}
+\begin{interactive}{js}{interactive.tar.gz}
+\plotone{f5.pdf}
+\end{interactive}
+\caption{Figure 4 from \citet{2018AJ....156...82C}. \emph{Upper panel}: the
+cumulative median observing time to measure the $3\sigma$ RV masses of TESS
+planets as a function of host star spectral type and up to $10^3$ hours.
+The \emph{dashed blue curves} represent the results from the optical
+spectrograph whereas the \emph{solid red curves} represent the near-IR
+spectrograph. \emph{Lower panel}: the time derivative of the cumulative
+observing time curves used to indicate the RV planet detection efficiency.
+The \emph{horizontal dashed line} highlights the value of the detection
+efficiency at 20 hours per detection.  Note that unlike the lower panels,
+the upper panels do not share a common ordinate due to the differing number
+of planet detections around stars in each spectral type bin. The
+interactive version has two buttons that allows one to turn the optical and
+NIR layers. \label{fig:interactive}}
+\end{figure}
+
+Authors should consult the online tutorials at 
+\url{https://journals.aas.org/graphics-guide/#interactive_figures}
+for more information on what is currently supported and links to 
+tutorials and examples.
 
 \section{Displaying mathematics} \label{sec:displaymath}
 
@@ -1149,7 +1109,7 @@ A summary list of all these tracking commands can be produced at the end of
 the article by adding the {\tt\string\listofchanges} just before the
 {\tt\string\end\{document\}} call.  The page number for each change will be
 provided. If the {\tt\string linenumbers} option is also included in the
-documentcall call then not only will all the lines in the article be
+documentclass call then not only will all the lines in the article be
 numbered for handy reference but the summary list will also include the
 line number for each change.
 
@@ -1209,9 +1169,6 @@ not have specific bibtex entries for these types of references so the
 code the ``@misc'' type correctly.  The most recent aasjournal.bst file,
 available with \aastex\ v6, will output bibtex ``@misc'' type properly.
 
-%% If you wish to include an acknowledgments section in your paper,
-%% separate it off from the body of the text using the \acknowledgments
-%% command.
 \acknowledgments
 
 We thank all the people that have made this AASTeX what it is today.  This
@@ -1239,7 +1196,7 @@ CTIO:1.5m,CXO}
 
 %% Similar to \facility{}, there is the optional \software command to allow 
 %% authors a place to specify which programs were used during the creation of 
-%% the manusscript. Authors should list each code and include either a
+%% the manuscript. Authors should list each code and include either a
 %% citation or url to the code inside ()s when available.
 
 \software{astropy \citep{2013A&A...558A..33A},  
@@ -1282,12 +1239,16 @@ be represented in print. Now author charges are determined by a number of
 digital ``quanta''.  A single quantum is 350 words, one figure, one table,
 and one enhanced digital item.  For the latter this includes machine readable
 tables, figure sets, animations, and interactive figures.  The current cost
-is \$27 per word quantum and \$30 for all other quantum type.
+for the different quanta types is available at 
+\url{https://journals.aas.org/article-charges-and-copyright/#author_publication_charges}. 
+Authors may use the ApJL length calculator to get a {\tt rough} estimate of 
+the number of word and float quanta in their manuscript. The calculator 
+is located at \url{https://authortools.aas.org/ApJL/betacountwords.html}.
 
 \section{Rotating tables} \label{sec:rotate}
 
 The process of rotating tables into landscape mode is slightly different in
-\aastex v6.2. Instead of the {\tt\string\rotate} command, a new environment
+\aastex v6.3. Instead of the {\tt\string\rotate} command, a new environment
 has been created to handle this task. To place a single page table in a
 landscape mode start the table portion with
 {\tt\string\begin\{rotatetable\}} and end with
@@ -1297,7 +1258,10 @@ Tables that exceed a print page take a slightly different environment since
 both rotation and long table printing are required. In these cases start
 with {\tt\string\begin\{longrotatetable\}} and end with
 {\tt\string\end\{longrotatetable\}}. Table \ref{chartable} is an
-example of a multi-page, rotated table.
+example of a multi-page, rotated table. The {\tt\string\movetabledown}
+command can be used to help center extremely wide, landscape tables. The
+command {\tt\string\movetabledown=1in} will move any rotated table down 1
+inch. 
 
 \begin{longrotatetable}
 \begin{deluxetable*}{lllrrrrrrll}
@@ -1382,48 +1346,82 @@ V838 Her & 5 (197) & 2448340.5 (197) & 2 (198) & \nodata & 0.5$\pm0.1$ (198) & 2
 \end{deluxetable*}
 \end{longrotatetable}
 
-A handy "cheat sheat" that provides the necessary LaTeX to produce 17 
+A handy "cheat sheet" that provides the necessary LaTeX to produce 17 
 different types of tables is available at \url{http://journals.aas.org/authors/aastex/aasguide.html#table_cheat_sheet}.
 
-%% The reference list follows the main body and any appendices.
-%% Use LaTeX's thebibliography environment to mark up your reference list.
-%% Note \begin{thebibliography} is followed by an empty set of
-%% curly braces.  If you forget this, LaTeX will generate the error
-%% "Perhaps a missing \item?".
+\section{IAU recommendations for nominal units \label{nominal}}
+
+The IAU 2015 resolution B3 defines nominal solar and planetary values by
+establishing conversions between solar and planetary values and SI units.
+The rational and specifications are given in \citet{2016AJ....152...41P}.
+The recommended nominal conversion constants for LaTeX have been
+incorporate into v6.3 to help authors follow the IAU resolution.
+
+The general commands take this form:
+
+\vskip12pt
+\begin{center}
+\begin{tabular}{@{\vrule height 14pt depth 6pt width0pt}lll}
+Command&Example&Results\\
+\verb+\nom{}+&\verb+\nom{Q}+&\nom{Q}\\
+\verb+\Eenom{}+&\verb+\Eenom{Q}+&\Eenom{Q}\\
+\verb+\Epnom{}+&\verb+\Epnom{Q}+&\Epnom{Q}\\
+\verb+\Jenom{}+&\verb+\Jenom{Q}+&\Jenom{Q}\\
+\verb+\Jpnom{}+&\verb+\Jpnom{Q}+&\Jpnom{Q}\\
+\end{tabular}
+\end{center}
+\vskip12pt
+
+which can be used for any units the author requires. Examples of 
+the most common uses would be:
+
+\vskip12pt
+\begin{tabular}{@{\vrule height 14pt depth 6pt width 0pt}llllp{3in}}
+1.&\verb+\nom{(GM)}+& \nom{(GM)} &=& nominal solar mass parameter\\
+2.&\verb+\nom{R}+&\nom{R} &=& nominal solar radius\\
+3.&\verb+\nom{S}+& \nom{S}&=&  nominal total solar irradiance\\
+4.&\verb+\nom{L}+& \nom{L}  &=&nominal solar luminosity\\
+\end{tabular}
+\vskip12pt
+
+AASTeX v6.3 also contains specific commands for other commonly used 
+units. These are:
+
+\vskip24pt
+\begin{tabular}{@{\vrule height 14pt depth 6pt width 0pt}llllp{3in}}
+1.&\verb+\nomSolarEffTemp+& \nomSolarEffTemp&=& nominal solar effective temperature\\
+2.&\verb+\nomTerrEqRadius+&\nomTerrEqRadius  &=& nominal terrestrial
+equatorial radius\\
+&\verb+\nomTerrPolarRadius+ &\nomTerrPolarRadius &=& nominal
+terrestrial polar radius\\
+&\verb+\nomTerrEqRadius+&\nomTerrEqRadius&& should be used if equatorial
+vs.~polar radius is not explicitly specified.\\
+3.&\verb+\nomJovianEqRadius+&\nomJovianEqRadius&=& nominal one-bar equatorial radii of
+Jupiter\\
+&\verb+\nomJovianPolarRadius+&\nomJovianPolarRadius &=& nominal polar radii of Jupiter\\
+&\verb+\nomJovianEqRadius+&\nomJovianEqRadius&& should be used if Jovian equatorial
+vs.~polar radius is not explicitly specified.\\
+4.&\verb+\nomTerrMass+ &\nomTerrMass &=& nominal terrestrial mass
+parameter\\
+&\verb+\nomJovianMass+ &\nomJovianMass &=& nominal Jovian mass parameter\\
+\end{tabular}
+\vskip12pt
+
+All of these commands work equally well in text and math mode.
+
+%% For this sample we use BibTeX plus aasjournals.bst to generate the
+%% the bibliography. The sample63.bib file was populated from ADS. To
+%% get the citations to show in the compiled file do the following:
 %%
-%% thebibliography produces citations in the text using \bibitem-\cite
-%% cross-referencing. Each reference is preceded by a
-%% \bibitem command that defines in curly braces the KEY that corresponds
-%% to the KEY in the \cite commands (see the first section above).
-%% Make sure that you provide a unique KEY for every \bibitem or else the
-%% paper will not LaTeX. The square brackets should contain
-%% the citation text that LaTeX will insert in
-%% place of the \cite commands.
+%% pdflatex sample63.tex
+%% bibtext sample63
+%% pdflatex sample63.tex
+%% pdflatex sample63.tex
 
-%% We have used macros to produce journal name abbreviations.
-%% \aastex provides a number of these for the more frequently-cited journals.
-%% See the Author Guide for a list of them.
+\bibliography{sample63}{}
+\bibliographystyle{aasjournal}
 
-%% Note that the style of the \bibitem labels (in []) is slightly
-%% different from previous examples.  The natbib system solves a host
-%% of citation expression problems, but it is necessary to clearly
-%% delimit the year from the author name used in the citation.
-%% See the natbib documentation for more details and options.
-
-\begin{thebibliography}{}
-
-\bibitem[Astropy Collaboration et al.(2013)]{2013A&A...558A..33A} Astropy Collaboration, Robitaille, T.~P., Tollerud, E.~J., et al.\ 2013, \aap, 558, A33 
-\bibitem[Bertin \& Arnouts(1996)]{1996A&AS..117..393B} Bertin, E., \& Arnouts, S.\ 1996, \aaps, 117, 393 
-\bibitem[Corrales(2015)]{2015ApJ...805...23C} Corrales, L.\ 2015, \apj, 805, 23
-\bibitem[Ferland et al.(2013)]{2013RMxAA..49..137F} Ferland, G.~J., Porter, R.~L., van Hoof, P.~A.~M., et al.\ 2013, \rmxaa, 49, 137
-\bibitem[Hanisch \& Biemesderfer(1989)]{1989BAAS...21..780H} Hanisch, R.~J., \& Biemesderfer, C.~D.\ 1989, \baas, 21, 780 
-\bibitem[Lamport(1994)]{lamport94} Lamport, L. 1994, LaTeX: A Document Preparation System, 2nd Edition (Boston, Addison-Wesley Professional)
-\bibitem[Schwarz et al.(2011)]{2011ApJS..197...31S} Schwarz, G.~J., Ness, J.-U., Osborne, J.~P., et al.\ 2011, \apjs, 197, 31  
-\bibitem[Vogt et al.(2014)]{2014ApJ...793..127V} Vogt, F.~P.~A., Dopita, M.~A., Kewley, L.~J., et al.\ 2014, \apj, 793, 127  
-
-\end{thebibliography}
-
-%% This command is needed to show the entire author+affilation list when
+%% This command is needed to show the entire author+affiliation list when
 %% the collaboration and author truncation commands are used.  It has to
 %% go at the end of the manuscript.
 %\allauthors
@@ -1434,4 +1432,4 @@ different types of tables is available at \url{http://journals.aas.org/authors/a
 
 \end{document}
 
-% End of file `sample62.tex'.
+% End of file `sample63.tex'.
