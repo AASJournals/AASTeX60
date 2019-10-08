@@ -1285,6 +1285,7 @@ FUNCTION {incollection}
 %    }
 %  if$
   format.pages "pages" output.check
+  format.pid output
   format.url output
   fin.entry
 }
@@ -1313,6 +1314,7 @@ FUNCTION {inproceedings}
 %    }
 %  if$
   format.pages output
+  format.pid output
   format.url output
   fin.entry
 }
@@ -1765,9 +1767,9 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\url}[1]{\href{#1}{#1}}"
   write$ newline$
-  "\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}"
+  "\providecommand{\dodoi}[1]{doi:~\href{https://doi.org/#1}{\nolinkurl{#1}}}"
   write$ newline$
-  "\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}"
+  "\providecommand{\doeprint}[1]{\href{https://ascl.net/#1}{\nolinkurl{https://ascl.net/#1}}}"
   write$ newline$
   "\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}"
   write$ newline$

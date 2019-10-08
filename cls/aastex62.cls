@@ -6030,7 +6030,7 @@ on page
 {\@currentHref }{\relax }}{#3}\fi }\fi \par \endgroup}}
 
 
-\newcommand\tablebreak{\\[-11pt]\noalign{\break}\\ }
+\newcommand\tablebreak{\\[-11pt]\noalign{\break} }
 
 %% As suggested by Greg Schwarz, August Meunch, Feb 11
 
