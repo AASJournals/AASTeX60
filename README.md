@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1209290.svg)](https://doi.org/10.5281/zenodo.1209290)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3675798.svg)](https://doi.org/10.5281/zenodo.3675798)
 
 ## AASTeX6
 The Version 6.3 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on July 10, 2019. A list of updates and changes provided by Version 6.3 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
@@ -29,7 +29,7 @@ Outside of issues or pull requests, please contact the AASTeX team for help at o
 | [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd       |
 | [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228)       |
 | [v6.2](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2018 February 23 | [10.5281/zenodo.1209290](https://doi.org/10.5281/zenodo.1209290)       |
-| [v6.3](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2019 July 10 | [tbd](http://example.com) |
+| [v6.3](https://github.com/AASJournals/AASTeX60/tree/v6.3)       | 2019 August 8 | [10.5281/zenodo.3675798](https://doi.org/10.5281/zenodo.3675798) |
 
 
 ## Credit
