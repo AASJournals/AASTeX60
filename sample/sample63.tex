@@ -952,21 +952,21 @@ at 01:00 UT on 2012 January 19. The video duration is 20 seconds.
 \label{fig:video}}
 \end{figure}
 
-Animations and interactive figures (Section \ref{sec:interactive}) should 
-use the {\tt\string\begin{interactive}} environment in the figure call. This 
-environment
-places a blue border around the figure to indicate that the figure is 
-enhanced in the published HTML article. The
-command also serves to alert the publisher what files are used to generate
-the dynamic HTML content. {\tt\string\interactive} takes two arguments. The
-first details the type and currently only three are allowed. The types are
-{\tt\string js} for generic javascript interactive figures, 
-{\tt\string animation} for inline videos, and 
-{\tt\string timeseries} for interactive light curves produced
-by astropy \citet{2013A&A...558A..33A}\footnote{To be release in the 
-summer of 2019}. If these types are not provide the compiler will issue an
-error and quit. The second argument is the file that produces the enhanced
-feature in the HTML article.
+Animations and interactive figures (Section \ref{sec:interactive})
+should use the {\tt\string\begin{interactive}} environment in the
+figure call. This environment places a blue border around the figure
+to indicate that the figure is enhanced in the published HTML
+article. The command also serves to alert the publisher what files are
+used to generate the dynamic HTML content. {\tt\string\interactive}
+takes two arguments. The first details the type and currently only
+three are allowed. The types are {\tt\string js} for generic
+javascript interactive figures, {\tt\string animation} for inline
+videos, and {\tt\string timeseries} for interactive light curves
+produced by astropy
+\citet{2013A&A...558A..33A,2018AJ....156..123A}\footnote{To be release
+  in the summer of 2019}. If these types are not provide the compiler
+will issue an error and quit. The second argument is the file that
+produces the enhanced feature in the HTML article.
 
 \subsubsection{Interactive figures \label{sec:interactive}}
 
@@ -1199,7 +1199,7 @@ CTIO:1.5m,CXO}
 %% the manuscript. Authors should list each code and include either a
 %% citation or url to the code inside ()s when available.
 
-\software{astropy \citep{2013A&A...558A..33A},  
+\software{astropy \citep{2013A&A...558A..33A,2018AJ....156..123A},  
           Cloudy \citep{2013RMxAA..49..137F}, 
           SExtractor \citep{1996A&AS..117..393B}
           }
