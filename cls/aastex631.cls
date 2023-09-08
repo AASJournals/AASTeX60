@@ -698,12 +698,12 @@ AASTeX631}
 \else
 %%
 \iftwocolstyle
-\vspace*{-\headsep}\vspace*{\headheight}
+\vspace*{-\headsep}%\vspace*{\headheight}
 \footnotesize
 {\footnotesize\textsc{\@journalinfo}}\par
 {\footnotesize Typeset using \LaTeX\ {\bf twocolumn} style in
 AASTeX631}
-\par\vspace*{-\baselineskip}\vspace*{0.625in}
+\par\vspace*{\baselineskip}%\vspace*{0.625in}
 \else
 \ifmanu
 \vspace*{-\headsep}\vspace*{\headheight}
@@ -797,7 +797,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 %\ifrnaas
 %\large\scshape\centering
 %\else
-\normalsize
+\Large
 %% added Mar 2019
 \bf\centering
 %\fi
@@ -879,13 +879,13 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 %% october 2017
 \def\frontmatter@abstractwidth{478pt}
 \def\frontmatter@preabstractspace{12pt}
-\def\frontmatter@postabstractspace{12pt}
+\def\frontmatter@postabstractspace{0pt}
 
-\def\abstractname{ABSTRACT}
+\def\abstractname{Abstract}
 \long\def\frontmatter@abstractheading{%
  \begingroup
   \centering
-\ifmodern\else\hskip34pt \fi \abstractname
+\ifmodern\else\hskip34pt \fi \bf\abstractname
   \vskip 1mm
   \par
  \endgroup
@@ -902,7 +902,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
  \columnwidth\textwidth
  \hsize\columnwidth
 \else
-\hsize = 478pt
+\hsize = \frontmatter@abstractwidth
 \fi
    \@parboxrestore
    \def\@mpfn{mpfootnote}\def\thempfn{\thempfootnote)}\c@mpfootnote\z@ % should be footnote, not mpfootnote?
@@ -958,7 +958,6 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
   \@ifx{\@empty\mini@notes}{}{\mini@notes\par}%
   \addvspace\frontmatter@postabstractspace
 \global\abstractfalse
-\vskip12pt
 }%
 
 \newif\ifbib
@@ -968,7 +967,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 %  ****************************************
 
 
-  \def\@keys@name{\textit{Keywords:}\/~\mbox{}}%
+  \def\@keys@name{\textit{Unified Astronomy Thesaurus concepts:}\/~\mbox{}}%
 
 \newlength{\keys@width}
 \def\frontmatter@keys@format{\ifmodern\vskip0pt\else\vspace*{0.5mm}\fi%
@@ -977,8 +976,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 \rightskip=0.5in
 \leftskip=34pt
 \fi
-\parindent=0pt%
-    \hangindent=\keys@width\hangafter=1\normalsize}%
+\parindent=0pt}%
 \def\@keywords@produce#1{%
  \showKEYS@sw{%
   \begingroup%
@@ -1108,7 +1106,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 \advance\tempsectnum by 1
 \xdef\cref@currentlabel{section \the\tempsectnum}
     \@startsection{section}{1}{\z@}{9pt plus 1pt minus
-    1pt}{4pt}{\apjsecfont\center}} 
+    1pt}{4pt}{\apjsecfont\bf\center}} 
 
 \def\subsection{\@startsection{subsection}{2}{\z@}{9pt plus 1pt minus 1pt}{4pt}%
   {\normalsize\itshape \center}}
@@ -1134,13 +1132,13 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
 \def\p@subparagraph   {}
 
 
-\def\sec@upcase#1{\uppercase{#1}}
+\def\sec@upcase#1{\relax{#1}}
 \def\subsec@upcase#1{\relax{#1}}
 
 %
 % How the section number will appear in the section title - AV
 \def\ApjSectionMarkInTitle#1{\ifrnaas\else #1.\ \fi}
-\def\ApjSectionpenalty{0}
+\def\ApjSectionpenalty{\@M}
 
 
 \def\@sect#1#2#3#4#5#6[#7]#8%
@@ -1152,7 +1150,7 @@ footnote\the\fncount\endcsname{\if@two@col\hsize=.5\textwidth
     \refstepcounter{#1} \edef \@svsec {\ApjSectionMarkInTitle 
     {\csname the#1\endcsname}}\fi
   \@hangfrom {\hskip #3\relax 
-    \ifnum #2=1{\secnum@size {\rm\@svsec~}}%
+    \ifnum #2=1{\secnum@size {\bf\@svsec~}}%
     \else {\subsecnum@size {\rm\@svsec~}}\fi }%
   {\interlinepenalty \@M 
    \ifnum #2=1\sec@upcase{#8}%
@@ -1235,27 +1233,22 @@ when using acknowledgments. For more details, see:\\
 %
 \fi\go
 %%
+\section*{Acknowledgments}
+\ifanonymous
 \global\setbox\ackbox=\vbox\bgroup
+\fi
 \ifnumlines
 \begin{internallinenumbers}
 \fi
-\vskip 5.8mm plus 1mm minus 1mm
-\vskip1sp
-%\section*{Acknowledgments}
 \noindent\ignorespaces}
 
 \def\endacknowledgments{
 \ifnumlines
 \end{internallinenumbers}
 \fi
-\egroup%% completes ackbox
 \ifanonymous
-\vskip 5.8mm plus 1mm minus 1mm
-\vskip1sp
-%\section*{Acknowledgments}
+\egroup%% completes ackbox that will be discarded
 \centerline{(Acknowledgments anonymized for review)}
-\else
-\vbox{\unvbox\ackbox}
 \fi\vskip6pt}
 
 %% alternate spelling
