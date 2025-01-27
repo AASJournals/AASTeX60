@@ -25,7 +25,7 @@ AASTeX development is performed outside of the GitHub platform by an outside TeX
 While the AAS Journals encourage developers to post preferred citations for their codes and encourage authors to cite all software that supports their research articles, citation of AASTeX or acknowledgement of the developers and maintainers of this package is traditionally seen as inappropriate and is not requested.
 
 ## Contact
-Outside of issues or pull requests, please contact the AASTeX team for help at our [AASTeX helpdesk](mailto:aastex@aas.org) or reach us on Twitter [@AAS_Publishing](https://twitter.com/AAS_Publishing).
+Outside of issues or pull requests, please contact the AASTeX team for help at our [AASTeX helpdesk](mailto:aastex@aas.org).
 
 ## Release History
 
