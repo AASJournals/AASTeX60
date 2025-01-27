@@ -10,6 +10,8 @@ The Version 6.3.1 style files and documentation for authoring [AAS Journal](http
 ## BibTeX
  This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated June 3, 2019 (v1.18). This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. The most recent update added anchored links to reference source material, e.g., links to article DOIs, arXiv preprints, and/or [ASCL](http://ascl.net) identifiers. These are explicit inline text links to ensure that the identifiers are available in the full text. This is why we do not endorse more compact anchor-linked BibTeX styles, e.g., `yahapj.bst.`
 
+This version does not support author initials for inline citations. That feature is only supplied with AASTeX Version 7.
+
 ## Download
 You may download the most recent version from this repository or from the [AAS Journals website](https://journals.aas.org/aastex-package-for-manuscript-preparation/). 
 
