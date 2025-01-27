@@ -1,7 +1,11 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3675798.svg)](https://doi.org/10.5281/zenodo.3675798)
 
+# Version 6.3.1 is a LEGACY RELEASE ONLY
+
+This is a legacy only official release branch. It is separate from the main branch of AASTeX60. The main branch has added user-provided features that are not present in this legacy branch. If you fork from this branch you will be using the original v6.3.1 files with all its bugs, revtex4-1 issues, still active. 
+
 ## AASTeX6
-The Version 6.3 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on July 10, 2019. A list of updates and changes provided by Version 6.3 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
+The Version 6.3.1 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on March 1, 2021. A list of updates and changes provided by Version 6.3 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3.1 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
 
 ## BibTeX
  This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated June 3, 2019 (v1.18). This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. The most recent update added anchored links to reference source material, e.g., links to article DOIs, arXiv preprints, and/or [ASCL](http://ascl.net) identifiers. These are explicit inline text links to ensure that the identifiers are available in the full text. This is why we do not endorse more compact anchor-linked BibTeX styles, e.g., `yahapj.bst.`
