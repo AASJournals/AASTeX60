@@ -2,7 +2,7 @@
 
 # Version 6.3.1 is a LEGACY RELEASE ONLY
 
-This is a legacy only official release branch. It is separate from the main branch of AASTeX60. The main branch has added user-provided features that are not present in this legacy branch. If you fork from this branch you will be using the original v6.3.1 files with all its bugs, revtex4-1 issues, still active. 
+This is a legacy only official release branch. It is separate from the main branch of AASTeX60. The main branch has added user-provided features that are not present in this legacy branch. If you fork from this branch you will be using the original v6.3.1 files with all its bugs, revtex4-1 issues, still active. It was uploaded to GitHub in advancer of the v7 release for archival purposes only.
 
 ## AASTeX6
 The Version 6.3.1 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on March 1, 2021. A list of updates and changes provided by Version 6.3 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3.1 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
