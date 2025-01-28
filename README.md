@@ -25,13 +25,12 @@ Outside of issues or pull requests, please contact the AASTeX team for help at o
 
 | Version  | Github Release   | DOI  |
 | -------- |:----------------:| -----|
-| [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](https://doi.org/10.5281/zenodo.45282)|
-| [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd       |
-| [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228)       |
-| [v6.2](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2018 February 23 | [10.5281/zenodo.1209290](https://doi.org/10.5281/zenodo.1209290)       |
+| [v6.0.1](https://github.com/AASJournals/AASTeX60/tree/v6.0.1)   | 2016 January 26  | [10.5281/zenodo.45282](https://doi.org/10.5281/zenodo.45282) |
+| [v6.0.2](https://github.com/AASJournals/AASTeX60/tree/v6.0.2)   | 2016 March 02    | tbd |
+| [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228) |
+| [v6.2](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2018 February 23 | [10.5281/zenodo.1209290](https://doi.org/10.5281/zenodo.1209290) |
 | [v6.3](https://github.com/AASJournals/AASTeX60/tree/v6.3)       | 2019 August 8 | [10.5281/zenodo.3675798](https://doi.org/10.5281/zenodo.3675798) |
-|
-| [v6.3.1](https://github.com/AASJournals/AASTeX60/tree/v6.3.1)       | 2025 January 27 | [10.5281/zenodo.14757029](https://doi.org/10.5281/zenodo.14757029) |
+| [v6.3.1](https://github.com/AASJournals/AASTeX60/tree/v6.3.1)   | 2025 January 27 | [10.5281/zenodo.14757029](https://doi.org/10.5281/zenodo.14757029) |
 
 ## Credit
 AASTeX originated 28 years ago with a set of LaTeX macros developed by [Bob Hanisch and Chris Biemesderfer](https://ui.adsabs.harvard.edu/#abs/1989BAAS...21..780H/abstract). While a more detailed history is available in the [sample document](sample/sample61.tex), we want to recognize the most recent contributions of individual astronomers to AASTeX 6 here. A partial list includes:
