@@ -1,7 +1,7 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3675798.svg)](https://doi.org/10.5281/zenodo.3675798)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.593626.svg)](https://doi.org/10.5281/zenodo.593626)
 
 ## AASTeX6
-The Version 6.3 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on July 10, 2019. A list of updates and changes provided by Version 6.3 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
+The Version 6.3.1 style files and documentation for authoring [AAS Journal](https://journals.aas.org) articles in LaTeX2e were released on March 1, 2021. A list of updates and changes provided by Version 6.3.1 can be found in the [AASTeX Revision History](https://journals.aas.org/aastex-revisionhistory/). Version 6.3.1 is backwards compatible with v6.2 and v6.1 but no prior version of AASTeX (i.e. not < v6.0).
 
 ## BibTeX
  This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated June 3, 2019 (v1.18). This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. The most recent update added anchored links to reference source material, e.g., links to article DOIs, arXiv preprints, and/or [ASCL](http://ascl.net) identifiers. These are explicit inline text links to ensure that the identifiers are available in the full text. This is why we do not endorse more compact anchor-linked BibTeX styles, e.g., `yahapj.bst.`
@@ -30,7 +30,8 @@ Outside of issues or pull requests, please contact the AASTeX team for help at o
 | [v6.1](https://github.com/AASJournals/AASTeX60/tree/v6.1)       | 2016 November 23 | [10.5281/zenodo.168228](https://doi.org/10.5281/zenodo.168228)       |
 | [v6.2](https://github.com/AASJournals/AASTeX60/tree/v6.2)       | 2018 February 23 | [10.5281/zenodo.1209290](https://doi.org/10.5281/zenodo.1209290)       |
 | [v6.3](https://github.com/AASJournals/AASTeX60/tree/v6.3)       | 2019 August 8 | [10.5281/zenodo.3675798](https://doi.org/10.5281/zenodo.3675798) |
-
+|
+| [v6.3.1](https://github.com/AASJournals/AASTeX60/tree/v6.3.1)       | 2025 January 27 | [10.5281/zenodo.14757029](https://doi.org/10.5281/zenodo.14757029) |
 
 ## Credit
 AASTeX originated 28 years ago with a set of LaTeX macros developed by [Bob Hanisch and Chris Biemesderfer](https://ui.adsabs.harvard.edu/#abs/1989BAAS...21..780H/abstract). While a more detailed history is available in the [sample document](sample/sample61.tex), we want to recognize the most recent contributions of individual astronomers to AASTeX 6 here. A partial list includes:
