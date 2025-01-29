@@ -10,7 +10,7 @@
 
 
 ## BibTeX
- This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated June 3, 2019 (v1.18). This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. 
+ This repository also includes the AAS Journals BibTeX style file, [aasjournal.bst](bst/aasjournal.bst), which was last updated October 24, 2024 (v1.18b). This is our BST file that supports the `version` and `publisher` fields of an `@misc` BibTeX entry. 
  The most recent update added anchored links to reference source material, e.g., links to article DOIs, arXiv preprints, and/or [ASCL](http://ascl.net) identifiers. These are explicit inline text links to ensure that the identifiers are available in the full text. This is why we do not endorse more compact anchor-linked BibTeX styles, e.g., `yahapj.bst.`
 
 ## Download
