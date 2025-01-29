@@ -1,5 +1,9 @@
 %% AASJournal.bst June 3, 2019
 %%
+%% Revision 1.18b 2024/10/24 August Muench
+%% Added edits from github.com/TheMartianLife to fix dashed entries in
+%% proceedings.
+%%
 %% Revision 1.18 2019/6/3 Amy Hendrickson
 %% Took out `v' preceding version number in @misc
 %%
