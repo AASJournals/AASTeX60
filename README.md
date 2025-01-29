@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.593626.svg)](https://doi.org/10.5281/zenodo.593626)
 
 # Version 6.3.2 is a LAST v6+ release of AASTeX
- It incorporates style and bug fixes provided by Alfred de Wijn (@dwijn) who posted v6.3.1 with style and bug fixes as a PR (#156).
+ It incorporates style and bug fixes provided by Alfred de Wijn (@dwijn) who posted v6.3.1 with their edits as a PR (#156).
  No further pull requests, bug fixes, or other code changes will be made to v6+. 
 
 ## AASTeX6
